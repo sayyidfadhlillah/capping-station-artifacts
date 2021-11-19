@@ -1,0 +1,11 @@
+delta DInletRemSkillsFB;
+uses Application;
+
+{
+    <Modify> Subapplication SubApp{
+        <Remove> FB Trans_C1_InletStopper;
+        <Remove> FB Trans_S1_InletSens;
+    }
+}
+
+

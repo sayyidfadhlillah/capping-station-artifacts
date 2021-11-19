@@ -1,0 +1,15 @@
+delta DRemSecondSensTransHW;
+uses Application;
+
+{
+    <Modify> Subapplication TransHW {
+        <Add> EventConnection S1_InletSensor1.INITO S3_OutletSensor1.INIT;
+        <Add> EventConnection S3_OutletSensor1.INITO INITO;
+        <Remove> EventConnection S1_InletSensor1.INITO S2_InletSensor2.INIT;
+        <Remove> EventConnection S2_InletSensor2.INITO S3_OutletSensor1.INIT;
+        <Remove> EventConnection S3_OutletSensor1.INITO S4_OutletSensor2.INIT;
+        <Remove> EventConnection S4_OutletSensor2.INITO INITO;
+        <Remove> FB S2_InletSensor2;
+        <Remove> FB S4_OutletSensor2;
+    }
+}

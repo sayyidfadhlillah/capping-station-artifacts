@@ -1,0 +1,27 @@
+productline CappingStation;
+variations CappingStation.PickNPlace, CappingStation.GripperAlg,
+	CappingStation.DoubleTap, CappingStation.PressureNotReached,
+	CappingStation.GripperType, CappingStation.DoubleGripper, 
+	CappingStation.SingleGripper, CappingStation.Supply, CappingStation.DoubleCap, CappingStation.SingleCap, 
+	CappingStation.Transport, CappingStation.InletStopper, CappingStation.InletS1, CappingStation.InletS2, 
+	CappingStation.OutletStopper, CappingStation.OutletS3, CappingStation.OutletS4;
+
+delta DRepressCap when CappingStation.DoubleTap || CappingStation.PressureNotReached || 
+	(CappingStation.DoubleGripper && CappingStation.DoubleCap);
+delta DApplyCapPresNotReached when CappingStation.PressureNotReached;
+delta DRepressCapPresNotReached after DRepressCap when CappingStation.PressureNotReached;
+delta DRepressCapForTwoCaps after DRepressCap when CappingStation.DoubleGripper && CappingStation.DoubleCap;
+delta DSecondGetCapForTwoCaps when CappingStation.DoubleGripper && CappingStation.DoubleCap;
+delta DInletRemSkillsFB when !CappingStation.RemoveInletStopper;
+delta DInletRemTransHW when !CappingStation.RemoveInletStopper;
+delta DRemSecondSensBasicSkills when !(CappingStation.InletS1 && CappingStation.OutletS3);
+delta DRemSecondSensTransHW when !(CappingStation.InletS1 && CappingStation.OutletS3);
+delta DRemSecondSensInPalette when !(CappingStation.InletS1 && CappingStation.OutletS3);
+delta DRemSecondSensOutPalette when !(CappingStation.InletS1 && CappingStation.OutletS3);
+delta DDoubleTapApp when CappingStation.DoubleTap;
+delta DApplicationPresNotReached after DDoubleTapApp when CappingStation.PressureNotReached;
+delta DApplicationForTwoCaps when CappingStation.DoubleGripper && CappingStation.DoubleCap;
+delta DInletRemApp when !CappingStation.RemoveInletStopper;
+delta DRemS2InletSens when !CappingStation.RemoveInletStopper || CappingStation.RemoveSecondSensor;
+
+

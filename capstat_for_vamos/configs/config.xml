@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="CappingStation"/>
+	<feature automatic="selected" name="PickNPlace"/>
+	<feature automatic="selected" name="GripperAlg"/>
+	<feature automatic="unselected" name="DoubleTap"/>
+	<feature automatic="unselected" name="PressureNotReached"/>
+	<feature manual="selected" name="Normal"/>
+	<feature automatic="selected" name="GripperType"/>
+	<feature automatic="unselected" name="DoubleGripper"/>
+	<feature manual="selected" name="SingleGripper"/>
+	<feature automatic="selected" name="Supply"/>
+	<feature automatic="selected" name="CapStation"/>
+	<feature automatic="unselected" name="DoubleCap"/>
+	<feature automatic="selected" name="SingleCap"/>
+	<feature automatic="selected" name="Transport"/>
+	<feature name="InletStopper"/>
+	<feature name="InletS1"/>
+	<feature name="InletS2"/>
+	<feature automatic="selected" name="OutletStopper"/>
+	<feature name="OutletS3"/>
+	<feature automatic="selected" name="OutletS4"/>
+</configuration>

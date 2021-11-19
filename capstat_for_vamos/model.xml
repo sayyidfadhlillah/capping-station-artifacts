@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="CappingStation">
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" mandatory="true" name="PickNPlace">
+				<alt abstract="true" mandatory="true" name="GripperAlg">
+					<and name="DoubleTap">
+						<feature name="PressureNotReached"/>
+					</and>
+					<feature name="Normal"/>
+				</alt>
+				<alt mandatory="true" name="GripperType">
+					<feature name="DoubleGripper"/>
+					<feature name="SingleGripper"/>
+				</alt>
+			</and>
+			<alt abstract="true" mandatory="true" name="Supply">
+				<feature name="DoubleCap"/>
+				<feature name="SingleCap"/>
+			</alt>
+			<and abstract="true" mandatory="true" name="Transport">
+				<and name="InletStopper">
+					<feature name="InletS1"/>
+					<feature mandatory="true" name="InletS2"/>
+				</and>
+				<and mandatory="true" name="OutletStopper">
+					<feature name="OutletS3"/>
+					<feature mandatory="true" name="OutletS4"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<conj>
+					<var>DoubleGripper</var>
+					<var>DoubleCap</var>
+				</conj>
+				<var>Normal</var>
+			</imp>
+		</rule>
+		<rule>
+			<eq>
+				<var>DoubleGripper</var>
+				<var>DoubleCap</var>
+			</eq>
+		</rule>
+		<rule>
+			<eq>
+				<var>InletS1</var>
+				<var>OutletS3</var>
+			</eq>
+		</rule>
+	</constraints>
+</extendedFeatureModel>

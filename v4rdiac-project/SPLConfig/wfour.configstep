@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workflow>
+    <step description="" name="Bussiness" num="0">
+        <fm name="BusinessVariability" path="C:\eclipse-workspace\BusinessVariability.csv"/>
+    </step>
+    <step description="" name="Mechanical" num="1">
+        <fm name="capstat_for_vamos" path="C:\eclipse-workspace\capstat_for_vamos"/>
+    </step>
+</workflow>

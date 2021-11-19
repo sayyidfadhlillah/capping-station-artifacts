@@ -1,0 +1,18 @@
+delta DRepressCap;
+uses Application;
+
+{
+    <Create> Subapplication PnP_RepressCap {
+        <Add> EventInput REQ type=Event;
+		<Add> EventOutput CNF type=Event;
+		<Add> FB PnP_PressureSens_1 type=SkillFB;
+		<Add> FB PnP_PressureSens_2 type=SkillFB;
+		<Add> FB PnP_C5_2 type=SkillFB;
+		<Add> FB PnP_C5_1 type=SkillFB;
+		<Add> EventConnection PnP_C5_1.CNF PnP_PressureSens_2.REQ;
+		<Add> EventConnection REQ PnP_PressureSens_1.REQ;
+		<Add> EventConnection PnP_C5_2.CNF CNF;
+		<Add> EventConnection REQ PnP_C5_1.REQ;
+		<Add> EventConnection PnP_PressureSens_2.CNF PnP_C5_2.REQ;
+    }
+}

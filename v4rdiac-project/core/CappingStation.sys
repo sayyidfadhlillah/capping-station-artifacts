@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System Name="CappingStation" Comment="">
+	<VersionInfo Organization="Eclipse 4diac" Version="1.0" Author="Author" Date="YYYY-MM-DD">
+	</VersionInfo>
+	<Application Name="Application" Comment="">
+		<SubAppNetwork>
+			<SubApp Name="PnPHW" Comment="" x="2926.666666666667" y="-4400.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="INIT" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="INITO" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="C10_Gripper" Type="HWFB" Comment="" x="-100.0" y="-600.0">
+					</FB>
+					<FB Name="C5_VCyl" Type="HWFB" Comment="" x="800.0" y="-600.0">
+					</FB>
+					<FB Name="C4_HCyl" Type="HWFB" Comment="" x="1800.0" y="-600.0">
+					</FB>
+					<EventConnections>
+						<Connection Source="INIT" Destination="C10_Gripper.INIT" Comment="" dx1="440.0" dx2="440.0" dy="0.0"/>
+						<Connection Source="C10_Gripper.INITO" Destination="C5_VCyl.INIT" Comment=""/>
+						<Connection Source="C5_VCyl.INITO" Destination="C4_HCyl.INIT" Comment=""/>
+						<Connection Source="C4_HCyl.INITO" Destination="INITO" Comment="" dx1="380.0" dx2="380.0" dy="0.0"/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<SubApp Name="SupplyHW" Comment="" x="2926.666666666667" y="-3720.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="INIT" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="INITO" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="C3" Type="HWFB" Comment="" x="1080.0" y="500.0">
+					</FB>
+					<FB Name="M1" Type="HWFB" Comment="" x="2800.0" y="500.0">
+					</FB>
+					<FB Name="S5_PartSensor" Type="SensFB" Comment="" x="1900.0" y="500.0">
+					</FB>
+					<EventConnections>
+						<Connection Source="INIT" Destination="C3.INIT" Comment="" dx1="1040.0"/>
+						<Connection Source="M1.INITO" Destination="INITO" Comment="" dx1="840.0"/>
+						<Connection Source="C3.INITO" Destination="S5_PartSensor.INIT" Comment=""/>
+						<Connection Source="S5_PartSensor.INITO" Destination="M1.INIT" Comment=""/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<SubApp Name="TransHW" Comment="" x="2926.666666666667" y="-3060.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="INIT" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="INITO" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="M2" Type="HWFB" Comment="" x="-280.0" y="-760.0">
+					</FB>
+					<FB Name="C2_OutletStopper" Type="HWFB" Comment="" x="1500.0" y="-760.0">
+					</FB>
+					<FB Name="C1_InletStopper" Type="HWFB" Comment="" x="600.0" y="-760.0">
+					</FB>
+					<FB Name="S1_InletSensor1" Type="SensFB" Comment="" x="2520.0" y="-760.0">
+					</FB>
+					<FB Name="S2_InletSensor2" Type="SensFB" Comment="" x="3460.0" y="-760.0">
+					</FB>
+					<FB Name="S3_OutletSensor1" Type="SensFB" Comment="" x="4380.0" y="-760.0">
+					</FB>
+					<FB Name="S4_OutletSensor2" Type="SensFB" Comment="" x="5360.0" y="-760.0">
+					</FB>
+					<EventConnections>
+						<Connection Source="INIT" Destination="M2.INIT" Comment="" dx1="600.0"/>
+						<Connection Source="C1_InletStopper.INITO" Destination="C2_OutletStopper.INIT" Comment=""/>
+						<Connection Source="M2.INITO" Destination="C1_InletStopper.INIT" Comment=""/>
+						<Connection Source="C2_OutletStopper.INITO" Destination="S1_InletSensor1.INIT" Comment=""/>
+						<Connection Source="S1_InletSensor1.INITO" Destination="S2_InletSensor2.INIT" Comment=""/>
+						<Connection Source="S2_InletSensor2.INITO" Destination="S3_OutletSensor1.INIT" Comment=""/>
+						<Connection Source="S3_OutletSensor1.INITO" Destination="S4_OutletSensor2.INIT" Comment=""/>
+						<Connection Source="S4_OutletSensor2.INITO" Destination="INITO" Comment="" dx1="180.0" dx2="180.0" dy="0.0"/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<SubApp Name="SubApp" Comment="All Basic Skills" x="19800.0" y="-5800.0">
+				<SubAppInterfaceList>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="PnP_C10_Gripper" Type="SkillFB" Comment="" x="2660.0" y="500.0">
+					</FB>
+					<FB Name="PnP_C5_VCyl" Type="SkillFB" Comment="" x="3500.0" y="500.0">
+					</FB>
+					<FB Name="PnP_C4_HCyl" Type="SkillFB" Comment="" x="4100.0" y="500.0">
+					</FB>
+					<FB Name="P_PressureSens" Type="SkillFB" Comment="" x="4700.0" y="500.0">
+					</FB>
+					<FB Name="Supply_C3" Type="SkillFB" Comment="" x="2700.0" y="2300.0">
+					</FB>
+					<FB Name="Supply_M1" Type="SkillFB" Comment="" x="3400.0" y="2300.0">
+					</FB>
+					<FB Name="Supply_S5_Check_Cap_Available" Type="SkillFB" Comment="" x="4100.0" y="2300.0">
+					</FB>
+					<FB Name="Trans_C1_InletStopper" Type="SkillFB" Comment="" x="1960.0" y="3940.0">
+					</FB>
+					<FB Name="Trans_C2_OutletStopper" Type="SkillFB" Comment="" x="2860.0" y="3940.0">
+					</FB>
+					<FB Name="Trans_M2" Type="SkillFB" Comment="" x="3960.0" y="3940.0">
+					</FB>
+					<FB Name="Trans_C6_Palette" Type="SkillFB" Comment="" x="4660.0" y="3940.0">
+					</FB>
+					<FB Name="Trans_S3_OutletSens" Type="SkillFB" Comment="" x="2000.0" y="5000.0">
+					</FB>
+					<FB Name="Trans_S4_OutletSens" Type="SkillFB" Comment="" x="3920.0" y="5000.0">
+					</FB>
+					<FB Name="Trans_S2_InletSens" Type="SkillFB" Comment="" x="4900.0" y="5000.0">
+					</FB>
+					<FB Name="Trans_S1_InletSens" Type="SkillFB" Comment="" x="2900.0" y="5000.0">
+					</FB>
+				</SubAppNetwork>
+				<Attribute Name="Unfolded" Type="STRING" Value="true"/>
+			</SubApp>
+			<FB Name="Start_1" Type="E_PERMIT" Comment="" x="2800.0" y="-5200.0">
+			</FB>
+			<FB Name="Supply_C3_1" Type="SkillFB" Comment="" x="4440.0" y="-5320.0">
+				<Parameter Name="msg" Value="'work'"/>
+			</FB>
+			<FB Name="Supply_C3_2" Type="SkillFB" Comment="" x="6520.0" y="-5320.0">
+				<Parameter Name="msg" Value="'home'"/>
+			</FB>
+			<FB Name="PnP_C10_1" Type="SkillFB" Comment="" x="5460.0" y="-5320.0">
+				<Parameter Name="msg" Value="'close'"/>
+			</FB>
+			<FB Name="PnP_C4_1" Type="SkillFB" Comment="" x="7460.0" y="-4860.0">
+				<Parameter Name="msg" Value="'work'"/>
+			</FB>
+			<SubApp Name="INletletPassPalette" Comment="Composite Skill to let a product pass through the stoper" x="5100.0" y="-3300.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="REQ" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="CNF" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="Trans_S1_2" Type="SkillFB" Comment="" x="-600.0" y="-6600.0">
+						<Parameter Name="msg" Value="'false'"/>
+					</FB>
+					<FB Name="Trans_S2_2" Type="SkillFB" Comment="" x="300.0" y="-6600.0">
+						<Parameter Name="msg" Value="'false'"/>
+					</FB>
+					<FB Name="Trans_S1_1" Type="SkillFB" Comment="" x="-520.0" y="-7700.0">
+						<Parameter Name="msg" Value="'true'"/>
+					</FB>
+					<FB Name="Trans_S2_1" Type="SkillFB" Comment="" x="1300.0" y="-7700.0">
+						<Parameter Name="msg" Value="'true'"/>
+					</FB>
+					<FB Name="Trans_C1_Down" Type="SkillFB" Comment="" x="300.0" y="-7700.0">
+						<Parameter Name="msg" Value="'home'"/>
+					</FB>
+					<FB Name="Trans_C1_Up" Type="SkillFB" Comment="" x="1200.0" y="-6600.0">
+						<Parameter Name="msg" Value="'work'"/>
+					</FB>
+					<EventConnections>
+						<Connection Source="Trans_S1_2.CNF" Destination="Trans_S2_2.REQ" Comment="" dx1="240.0"/>
+						<Connection Source="Trans_S1_1.CNF" Destination="Trans_C1_Down.REQ" Comment="" dx1="240.0"/>
+						<Connection Source="Trans_C1_Down.CNF" Destination="Trans_S2_1.REQ" Comment="" dx1="220.0" dx2="220.0" dy="0.0"/>
+						<Connection Source="REQ" Destination="Trans_S1_1.REQ" Comment="" dx1="300.0"/>
+						<Connection Source="Trans_S2_2.CNF" Destination="Trans_C1_Up.REQ" Comment="" dx1="200.0" dx2="200.0" dy="0.0"/>
+						<Connection Source="Trans_C1_Up.CNF" Destination="CNF" Comment="" dx1="200.0"/>
+						<Connection Source="Trans_S2_1.CNF" Destination="Trans_S1_2.REQ" Comment="" dx1="60.0" dx2="180.0" dy="760.0"/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<FB Name="Trans_S3_1" Type="SkillFB" Comment="" x="5900.0" y="-3400.0">
+				<Parameter Name="msg" Value="'true'"/>
+			</FB>
+			<FB Name="Trans_M1_1" Type="SkillFB" Comment="" x="4300.0" y="-3400.0">
+				<Parameter Name="msg" Value="'on'"/>
+			</FB>
+			<FB Name="Trans_M2_2" Type="SkillFB" Comment="" x="6960.0" y="-3400.0">
+				<Parameter Name="msg" Value="'off'"/>
+			</FB>
+			<FB Name="Trans_C6_1" Type="SkillFB" Comment="" x="7860.0" y="-3400.0">
+				<Parameter Name="msg" Value="'fix'"/>
+			</FB>
+			<FB Name="E_REND_4" Type="E_REND" Comment="" x="8740.0" y="-4760.0">
+			</FB>
+			<FB Name="Trans_C6_2" Type="SkillFB" Comment="" x="10260.0" y="-3660.0">
+				<Parameter Name="msg" Value="'release'"/>
+			</FB>
+			<SubApp Name="OUTletletPassPalette_2" Comment="" x="11860.0" y="-3660.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="REQ" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="CNF" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="Trans_S3_2" Type="SkillFB" Comment="" x="4360.0" y="-7620.0">
+						<Parameter Name="msg" Value="'false'"/>
+					</FB>
+					<FB Name="Trans_S4_2" Type="SkillFB" Comment="" x="5480.0" y="-7580.0">
+						<Parameter Name="msg" Value="'false'"/>
+					</FB>
+					<FB Name="Trans_S3_1" Type="SkillFB" Comment="" x="1000.0" y="-7660.0">
+						<Parameter Name="msg" Value="'true'"/>
+					</FB>
+					<FB Name="Trans_S4_1" Type="SkillFB" Comment="" x="3260.0" y="-7660.0">
+						<Parameter Name="msg" Value="'true'"/>
+					</FB>
+					<FB Name="Trans_C2_Down" Type="SkillFB" Comment="" x="1980.0" y="-7640.0">
+						<Parameter Name="msg" Value="'home'"/>
+					</FB>
+					<FB Name="Trans_C2_Up" Type="SkillFB" Comment="" x="6660.0" y="-7600.0">
+						<Parameter Name="msg" Value="'work'"/>
+					</FB>
+					<EventConnections>
+						<Connection Source="Trans_S4_1.CNF" Destination="Trans_S3_2.REQ" Comment="" dx1="260.0"/>
+						<Connection Source="Trans_S3_2.CNF" Destination="Trans_S4_2.REQ" Comment="" dx1="240.0"/>
+						<Connection Source="Trans_S3_1.CNF" Destination="Trans_C2_Down.REQ" Comment="" dx1="240.0"/>
+						<Connection Source="Trans_C2_Down.CNF" Destination="Trans_S4_1.REQ" Comment="" dx1="220.0" dx2="220.0" dy="0.0"/>
+						<Connection Source="REQ" Destination="Trans_S3_1.REQ" Comment="" dx1="580.0"/>
+						<Connection Source="Trans_S4_2.CNF" Destination="Trans_C2_Up.REQ" Comment="" dx1="200.0" dx2="200.0" dy="0.0"/>
+						<Connection Source="Trans_C2_Up.CNF" Destination="CNF" Comment="" dx1="420.0"/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<FB Name="Trans_M2_3" Type="SkillFB" Comment="" x="11140.0" y="-3640.0">
+				<Parameter Name="msg" Value="'on'"/>
+			</FB>
+			<FB Name="PnP_C4_2" Type="SkillFB" Comment="" x="10360.0" y="-4860.0">
+				<Parameter Name="msg" Value="'home'"/>
+			</FB>
+			<FB Name="E_REND" Type="E_REND" Comment="" x="11160.0" y="-5360.0">
+			</FB>
+			<SubApp Name="Init" Comment="" x="3600.0" y="-5200.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="REQ" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="CFNF" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<SubApp Name="Supply_Init" Comment="" x="1540.0" y="-8140.0">
+						<SubAppInterfaceList>
+							<SubAppEventInputs>
+								<SubAppEvent Name="REQ" Type="Event" Comment="">
+								</SubAppEvent>
+							</SubAppEventInputs>
+							<SubAppEventOutputs>
+								<SubAppEvent Name="CNF" Type="Event" Comment="">
+								</SubAppEvent>
+							</SubAppEventOutputs>
+						</SubAppInterfaceList>
+						<SubAppNetwork>
+							<FB Name="Supply_C3_Home" Type="SkillFB" Comment="" x="740.0" y="-2740.0">
+								<Parameter Name="msg" Value="'home'"/>
+							</FB>
+							<FB Name="Supply_M1_Off" Type="SkillFB" Comment="" x="3540.0" y="-2740.0">
+								<Parameter Name="msg" Value="'off'"/>
+							</FB>
+							<FB Name="Supply_M1_On" Type="SkillFB" Comment="" x="1640.0" y="-2740.0">
+								<Parameter Name="msg" Value="'on'"/>
+							</FB>
+							<FB Name="Supply_S5_WaitForCap" Type="SkillFB" Comment="" x="2540.0" y="-2740.0">
+								<Parameter Name="msg" Value="'true'"/>
+							</FB>
+							<EventConnections>
+								<Connection Source="Supply_C3_Home.CNF" Destination="Supply_M1_On.REQ" Comment=""/>
+								<Connection Source="Supply_S5_WaitForCap.CNF" Destination="Supply_M1_Off.REQ" Comment=""/>
+								<Connection Source="Supply_M1_On.CNF" Destination="Supply_S5_WaitForCap.REQ" Comment=""/>
+								<Connection Source="REQ" Destination="Supply_C3_Home.REQ" Comment="" dx1="280.0"/>
+								<Connection Source="Supply_M1_Off.CNF" Destination="CNF" Comment="" dx1="140.0"/>
+							</EventConnections>
+						</SubAppNetwork>
+					</SubApp>
+					<SubApp Name="PnP_Init" Comment="" x="740.0" y="-8140.0">
+						<SubAppInterfaceList>
+							<SubAppEventInputs>
+								<SubAppEvent Name="REQ" Type="Event" Comment="">
+								</SubAppEvent>
+							</SubAppEventInputs>
+							<SubAppEventOutputs>
+								<SubAppEvent Name="CNF" Type="Event" Comment="">
+								</SubAppEvent>
+							</SubAppEventOutputs>
+						</SubAppInterfaceList>
+						<SubAppNetwork>
+							<FB Name="PP_C5_VCyl_Home" Type="SkillFB" Comment="" x="2340.0" y="140.0">
+								<Parameter Name="msg" Value="'home'"/>
+							</FB>
+							<FB Name="PP_C4_HCyl_Home" Type="SkillFB" Comment="" x="1540.0" y="140.0">
+								<Parameter Name="msg" Value="'home'"/>
+							</FB>
+							<FB Name="PP_C10_Open" Type="SkillFB" Comment="" x="740.0" y="140.0">
+								<Parameter Name="msg" Value="'open'"/>
+							</FB>
+							<EventConnections>
+								<Connection Source="PP_C4_HCyl_Home.CNF" Destination="PP_C5_VCyl_Home.REQ" Comment="" dx1="160.0"/>
+								<Connection Source="PP_C10_Open.CNF" Destination="PP_C4_HCyl_Home.REQ" Comment="" dx1="160.0"/>
+								<Connection Source="PP_C5_VCyl_Home.CNF" Destination="CNF" Comment="" dx1="220.0"/>
+								<Connection Source="REQ" Destination="PP_C10_Open.REQ" Comment="" dx1="280.0"/>
+							</EventConnections>
+						</SubAppNetwork>
+					</SubApp>
+					<SubApp Name="Trans_Init" Comment="" x="1540.0" y="-7540.0">
+						<SubAppInterfaceList>
+							<SubAppEventInputs>
+								<SubAppEvent Name="REQ" Type="Event" Comment="">
+								</SubAppEvent>
+							</SubAppEventInputs>
+							<SubAppEventOutputs>
+								<SubAppEvent Name="CNF" Type="Event" Comment="">
+								</SubAppEvent>
+							</SubAppEventOutputs>
+						</SubAppInterfaceList>
+						<SubAppNetwork>
+							<FB Name="Trans_C1_Inlet_Up" Type="SkillFB" Comment="" x="740.0" y="-1240.0">
+								<Parameter Name="msg" Value="'work'"/>
+							</FB>
+							<FB Name="Trans_M2_On" Type="SkillFB" Comment="" x="2740.0" y="-1240.0">
+								<Parameter Name="msg" Value="'on'"/>
+							</FB>
+							<FB Name="Trans_C6_release" Type="SkillFB" Comment="" x="1640.0" y="-1240.0">
+								<Parameter Name="msg" Value="'release'"/>
+							</FB>
+							<SubApp Name="OUTletletPassPalette_1" Comment="" x="4260.0" y="-1320.0">
+								<SubAppInterfaceList>
+									<SubAppEventInputs>
+										<SubAppEvent Name="REQ" Type="Event" Comment="">
+										</SubAppEvent>
+									</SubAppEventInputs>
+									<SubAppEventOutputs>
+										<SubAppEvent Name="CNF" Type="Event" Comment="">
+										</SubAppEvent>
+									</SubAppEventOutputs>
+								</SubAppInterfaceList>
+								<SubAppNetwork>
+									<FB Name="Trans_S3_OutletSens1_2" Type="SkillFB" Comment="" x="4360.0" y="-7620.0">
+										<Parameter Name="msg" Value="'false'"/>
+									</FB>
+									<FB Name="Trans_S4_OutletSens2_1" Type="SkillFB" Comment="" x="5480.0" y="-7580.0">
+										<Parameter Name="msg" Value="'false'"/>
+									</FB>
+									<FB Name="Trans_S3_OutletSens1_1" Type="SkillFB" Comment="" x="680.0" y="-7613.333333333334">
+										<Parameter Name="msg" Value="'true'"/>
+									</FB>
+									<FB Name="Trans_S4_OutletSens2" Type="SkillFB" Comment="" x="3260.0" y="-7660.0">
+										<Parameter Name="msg" Value="'true'"/>
+									</FB>
+									<FB Name="Trans_C6_OutletStopper_Down" Type="SkillFB" Comment="" x="1980.0" y="-7640.0">
+										<Parameter Name="msg" Value="'home'"/>
+									</FB>
+									<FB Name="Trans_C2_OutletStopper_Up" Type="SkillFB" Comment="" x="6640.0" y="-7680.0">
+										<Parameter Name="msg" Value="'work'"/>
+									</FB>
+									<EventConnections>
+										<Connection Source="Trans_S4_OutletSens2.CNF" Destination="Trans_S3_OutletSens1_2.REQ" Comment="" dx1="260.0"/>
+										<Connection Source="Trans_S3_OutletSens1_2.CNF" Destination="Trans_S4_OutletSens2_1.REQ" Comment="" dx1="240.0"/>
+										<Connection Source="Trans_S3_OutletSens1_1.CNF" Destination="Trans_C6_OutletStopper_Down.REQ" Comment="" dx1="240.0"/>
+										<Connection Source="Trans_C6_OutletStopper_Down.CNF" Destination="Trans_S4_OutletSens2.REQ" Comment="" dx1="220.0" dx2="220.0" dy="0.0"/>
+										<Connection Source="REQ" Destination="Trans_S3_OutletSens1_1.REQ" Comment="" dx1="580.0"/>
+										<Connection Source="Trans_S4_OutletSens2_1.CNF" Destination="Trans_C2_OutletStopper_Up.REQ" Comment="" dx1="80.0" dx2="80.0" dy="-40.0"/>
+										<Connection Source="Trans_C2_OutletStopper_Up.CNF" Destination="CNF" Comment="" dx1="600.0"/>
+									</EventConnections>
+								</SubAppNetwork>
+								<Attribute Name="Unfolded" Type="STRING" Value="true"/>
+							</SubApp>
+							<FB Name="Trans_M2_Off" Type="SkillFB" Comment="" x="12920.0" y="-1200.0">
+								<Parameter Name="msg" Value="'off'"/>
+							</FB>
+							<EventConnections>
+								<Connection Source="Trans_C1_Inlet_Up.CNF" Destination="Trans_C6_release.REQ" Comment="" dx1="220.0"/>
+								<Connection Source="Trans_C6_release.CNF" Destination="Trans_M2_On.REQ" Comment=""/>
+								<Connection Source="REQ" Destination="Trans_C1_Inlet_Up.REQ" Comment="" dx1="280.0"/>
+								<Connection Source="Trans_M2_On.CNF" Destination="OUTletletPassPalette_1.REQ" Comment="" dx1="400.0"/>
+								<Connection Source="Trans_M2_Off.CNF" Destination="CNF" Comment="" dx1="420.0" dx2="1100.0" dy="0.0"/>
+								<Connection Source="OUTletletPassPalette_1.CNF" Destination="Trans_M2_Off.REQ" Comment="" dx1="80.0" dx2="80.0" dy="100.0"/>
+							</EventConnections>
+						</SubAppNetwork>
+					</SubApp>
+					<FB Name="E_REND_3" Type="E_REND" Comment="" x="2440.0" y="-8140.0">
+					</FB>
+					<EventConnections>
+						<Connection Source="PnP_Init.CNF" Destination="Supply_Init.REQ" Comment=""/>
+						<Connection Source="Supply_Init.CNF" Destination="E_REND_3.EI1" Comment="" dx1="260.0"/>
+						<Connection Source="PnP_Init.CNF" Destination="Trans_Init.REQ" Comment="" dx1="160.0"/>
+						<Connection Source="Trans_Init.CNF" Destination="E_REND_3.EI2" Comment="" dx1="220.0"/>
+						<Connection Source="REQ" Destination="PnP_Init.REQ" Comment="" dx1="60.0" dx2="60.0" dy="-4100.0"/>
+						<Connection Source="E_REND_3.EO" Destination="CFNF" Comment="" dx1="1000.0"/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<SubApp Name="PnP_ApplyCap" Comment="" x="9460.0" y="-4760.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="Req" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="CNF" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="PnP_PressureSens_1" Type="SkillFB" Comment="" x="0.0" y="-12760.0">
+						<Parameter Name="msg" Value="'on'"/>
+					</FB>
+					<FB Name="PnP_C10_1" Type="SkillFB" Comment="" x="2780.0" y="-11720.0">
+						<Parameter Name="msg" Value="'open'"/>
+					</FB>
+					<FB Name="PnP_PressureSens_2" Type="SkillFB" Comment="" x="1340.0" y="-11720.0">
+						<Parameter Name="msg" Value="'off'"/>
+					</FB>
+					<FB Name="PnP_C5_2" Type="SkillFB" Comment="" x="4000.0" y="-11720.0">
+						<Parameter Name="msg" Value="'home'"/>
+					</FB>
+					<FB Name="PnP_C5_1" Type="SkillFB" Comment="" x="60.0" y="-11720.0">
+						<Parameter Name="msg" Value="'work'"/>
+					</FB>
+					<EventConnections>
+						<Connection Source="PnP_PressureSens_2.CNF" Destination="PnP_C10_1.REQ" Comment=""/>
+						<Connection Source="PnP_C10_1.CNF" Destination="PnP_C5_2.REQ" Comment=""/>
+						<Connection Source="PnP_C5_1.CNF" Destination="PnP_PressureSens_2.REQ" Comment=""/>
+						<Connection Source="Req" Destination="PnP_PressureSens_1.REQ" Comment="" dx1="680.0"/>
+						<Connection Source="PnP_C5_2.CNF" Destination="CNF" Comment="" dx1="100.0"/>
+						<Connection Source="Req" Destination="PnP_C5_1.REQ" Comment="" dx1="600.0" dx2="600.0" dy="0.0"/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<SubApp Name="Supply_GetNewCap" Comment="" x="7460.0" y="-5360.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="REQ" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<SubAppEventOutputs>
+						<SubAppEvent Name="CNF" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventOutputs>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+					<FB Name="Supply_M1_2" Type="SkillFB" Comment="" x="2540.0" y="-11900.0">
+						<Parameter Name="msg" Value="'off'"/>
+					</FB>
+					<FB Name="Supply_M1_1" Type="SkillFB" Comment="" x="740.0" y="-11900.0">
+						<Parameter Name="msg" Value="'on'"/>
+					</FB>
+					<FB Name="Supply_S5_1" Type="SkillFB" Comment="" x="1440.0" y="-11900.0">
+						<Parameter Name="msg" Value="'true'"/>
+					</FB>
+					<EventConnections>
+						<Connection Source="Supply_S5_1.CNF" Destination="Supply_M1_2.REQ" Comment="" dx1="160.0"/>
+						<Connection Source="Supply_M1_1.CNF" Destination="Supply_S5_1.REQ" Comment="" dx1="240.0"/>
+						<Connection Source="Supply_M1_2.CNF" Destination="CNF" Comment="" dx1="1340.0"/>
+						<Connection Source="REQ" Destination="Supply_M1_1.REQ" Comment="" dx1="60.0" dx2="60.0" dy="-5940.0"/>
+					</EventConnections>
+				</SubAppNetwork>
+			</SubApp>
+			<SubApp Name="Dummy" Comment="" x="2920.0" y="-1920.0">
+				<SubAppInterfaceList>
+					<SubAppEventInputs>
+						<SubAppEvent Name="Dum123" Type="Event" Comment="">
+						</SubAppEvent>
+					</SubAppEventInputs>
+					<InputVars>
+						<VarDeclaration Name="Mud123" Type="BOOL" Comment=""/>
+					</InputVars>
+				</SubAppInterfaceList>
+				<SubAppNetwork>
+				</SubAppNetwork>
+			</SubApp>
+			<EventConnections>
+				<Connection Source="PnPHW.INITO" Destination="SupplyHW.INIT" Comment="" dx1="80.0" dx2="80.0" dy="320.0"/>
+				<Connection Source="Supply_C3_1.CNF" Destination="PnP_C10_1.REQ" Comment="" dx1="240.0" dx2="240.0" dy="0.0"/>
+				<Connection Source="PnP_C10_1.CNF" Destination="Supply_C3_2.REQ" Comment="" dx1="380.0"/>
+				<Connection Source="Supply_C3_2.CNF" Destination="PnP_C4_1.REQ" Comment="" dx1="160.0"/>
+				<Connection Source="INletletPassPalette.CNF" Destination="Trans_S3_1.REQ" Comment="" dx1="160.0"/>
+				<Connection Source="Trans_S3_1.CNF" Destination="Trans_M2_2.REQ" Comment="" dx1="80.0"/>
+				<Connection Source="Trans_M2_2.CNF" Destination="Trans_C6_1.REQ" Comment="" dx1="260.0"/>
+				<Connection Source="PnP_C4_1.CNF" Destination="E_REND_4.EI1" Comment="" dx1="500.0"/>
+				<Connection Source="Trans_C6_1.CNF" Destination="E_REND_4.EI2" Comment="" dx1="80.0"/>
+				<Connection Source="Trans_C6_2.CNF" Destination="Trans_M2_3.REQ" Comment="" dx1="220.0"/>
+				<Connection Source="Trans_M2_3.CNF" Destination="OUTletletPassPalette_2.REQ" Comment="" dx1="120.0"/>
+				<Connection Source="OUTletletPassPalette_2.CNF" Destination="INletletPassPalette.REQ" Comment="" dx1="260.0" dx2="80.0" dy="1240.0"/>
+				<Connection Source="PnP_C4_2.CNF" Destination="E_REND.EI2" Comment="" dx1="100.0"/>
+				<Connection Source="Start_1.EO" Destination="Init.REQ" Comment=""/>
+				<Connection Source="Init.CFNF" Destination="Supply_C3_1.REQ" Comment="" dx1="180.0"/>
+				<Connection Source="Init.CFNF" Destination="Trans_M1_1.REQ" Comment="" dx1="66.66666666666667"/>
+				<Connection Source="E_REND.EO" Destination="Supply_C3_1.REQ" Comment="" dx1="280.0" dx2="60.0" dy="-380.0"/>
+				<Connection Source="Trans_M1_1.CNF" Destination="INletletPassPalette.REQ" Comment="" dx1="200.0"/>
+				<Connection Source="PnP_ApplyCap.CNF" Destination="Trans_C6_2.REQ" Comment="" dx1="140.0"/>
+				<Connection Source="PnP_ApplyCap.CNF" Destination="PnP_C4_2.REQ" Comment="" dx1="140.0"/>
+				<Connection Source="Supply_GetNewCap.CNF" Destination="E_REND.EI1" Comment="" dx1="2620.0"/>
+				<Connection Source="Supply_C3_2.CNF" Destination="Supply_GetNewCap.REQ" Comment="" dx1="180.0"/>
+				<Connection Source="E_REND_4.EO" Destination="PnP_ApplyCap.Req" Comment="" dx1="80.0"/>
+				<Connection Source="SupplyHW.INITO" Destination="TransHW.INIT" Comment="" dx1="80.0" dx2="80.0" dy="340.0"/>
+			</EventConnections>
+		</SubAppNetwork>
+	</Application>
+	<Device Name="PnP_Unit" Type="FORTE_PC" Comment="" x="3200.0" y="1320.0">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC" Comment="device profile"/>
+		<Attribute Name="Color" Type="STRING" Value="231,132,126" Comment="color"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<SubApp Name="PnPHW" Comment="" x="6700.0" y="-1400.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="INIT" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="INITO" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<FB Name="PnP_C10_1" Type="SkillFB" Comment="" x="5200.0" y="-5360.0">
+					<Parameter Name="msg" Value="'close'"/>
+				</FB>
+				<FB Name="PnP_C4_1" Type="SkillFB" Comment="" x="7200.0" y="-4800.0">
+					<Parameter Name="msg" Value="'work'"/>
+				</FB>
+				<SubApp Name="PnP_ApplyCap" Comment="" x="9100.0" y="-4700.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="Req" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="CNF" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<FB Name="PnP_C4_2" Type="SkillFB" Comment="" x="10000.0" y="-4800.0">
+					<Parameter Name="msg" Value="'home'"/>
+				</FB>
+				<SubApp Name="PP" Comment="" x="1620.0" y="200.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="Init" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="GetCap" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="ApplyCap" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="MoveCap" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="InitO" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="HasCap" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="CapApplied" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="GetNewCap" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<SubApp Name="PickAndPlace" Comment="" x="3760.0" y="320.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="INIT" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="INITO" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+						<Sockets>
+							<AdapterDeclaration Name="cmd" Type="APickNPlace" Comment=""/>
+						</Sockets>
+					</SubAppInterfaceList>
+				</SubApp>
+				<EventConnections>
+					<Connection Source="PnP_ApplyCap.CNF" Destination="PnP_C4_2.REQ" Comment=""/>
+				</EventConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Device Name="Supply_Unit" Type="FORTE_PC" Comment="" x="4120.0" y="1320.0">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC" Comment="device profile"/>
+		<Attribute Name="Color" Type="STRING" Value="143,171,209" Comment="color"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<FB Name="Supply_C3_1" Type="SkillFB" Comment="" x="4440.0" y="-5360.0">
+					<Parameter Name="msg" Value="'work'"/>
+				</FB>
+				<FB Name="Supply_C3_2" Type="SkillFB" Comment="" x="6100.0" y="-5360.0">
+					<Parameter Name="msg" Value="'home'"/>
+				</FB>
+				<SubApp Name="Supply" Comment="" x="2940.0" y="200.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="Init" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="ProvideCap" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="PPTookCap" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="InitO" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="CapAvailable" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="PPCanMove" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<SubApp Name="Supply" Comment="" x="4860.0" y="580.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="INIT" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="INITO" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+						<Sockets>
+							<AdapterDeclaration Name="cmd" Type="ASupply" Comment=""/>
+							<AdapterDeclaration Name="depletionAlarm" Type="Alarm" Comment=""/>
+						</Sockets>
+					</SubAppInterfaceList>
+				</SubApp>
+				<SubApp Name="Supply_GetNewCap" Comment="" x="7200.0" y="-5300.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="REQ" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="CNF" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<SubApp Name="SupplyHW" Comment="" x="7700.0" y="-1400.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="INIT" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="INITO" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<EventConnections>
+					<Connection Source="Supply_C3_2.CNF" Destination="Supply_GetNewCap.REQ" Comment=""/>
+				</EventConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Device Name="Transport_Unit" Type="FORTE_PC" Comment="" x="5060.0" y="1320.0">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC" Comment="device profile"/>
+		<Attribute Name="Color" Type="STRING" Value="254,236,188" Comment="color"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<SubApp Name="TransHW" Comment="" x="8760.0" y="-1400.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="INIT" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="INITO" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<SubApp Name="OUTletletPassPalette_2" Comment="" x="11500.0" y="-3600.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="REQ" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="CNF" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<FB Name="Trans_M2_3" Type="SkillFB" Comment="" x="10780.0" y="-3560.0">
+					<Parameter Name="msg" Value="'on'"/>
+				</FB>
+				<FB Name="Trans_C6_2" Type="SkillFB" Comment="" x="9900.0" y="-3600.0">
+					<Parameter Name="msg" Value="'release'"/>
+				</FB>
+				<FB Name="Trans_C6_1" Type="SkillFB" Comment="" x="7600.0" y="-3400.0">
+					<Parameter Name="msg" Value="'fix'"/>
+				</FB>
+				<FB Name="Trans_M2_2" Type="SkillFB" Comment="" x="6800.0" y="-3400.0">
+					<Parameter Name="msg" Value="'off'"/>
+				</FB>
+				<FB Name="Trans_S3_1" Type="SkillFB" Comment="" x="5900.0" y="-3400.0">
+					<Parameter Name="msg" Value="'true'"/>
+				</FB>
+				<FB Name="Trans_M1_1" Type="SkillFB" Comment="" x="4300.0" y="-3400.0">
+					<Parameter Name="msg" Value="'on'"/>
+				</FB>
+				<SubApp Name="INletletPassPalette" Comment="" x="5100.0" y="-3300.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="REQ" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="CNF" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<SubApp Name="Transport" Comment="" x="2940.0" y="1100.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="Init" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="GetPalette" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="MovePalette" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="InitO" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="PaletteAvailable" Type="Event" Comment="">
+							</SubAppEvent>
+							<SubAppEvent Name="MovedPalette" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+					</SubAppInterfaceList>
+				</SubApp>
+				<SubApp Name="ConveyorBelt" Comment="" x="6200.0" y="960.0">
+					<SubAppInterfaceList>
+						<SubAppEventInputs>
+							<SubAppEvent Name="INIT" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventInputs>
+						<SubAppEventOutputs>
+							<SubAppEvent Name="INITO" Type="Event" Comment="">
+							</SubAppEvent>
+						</SubAppEventOutputs>
+						<Sockets>
+							<AdapterDeclaration Name="cmd" Type="AConveyor" Comment=""/>
+						</Sockets>
+					</SubAppInterfaceList>
+				</SubApp>
+				<EventConnections>
+					<Connection Source="Trans_M2_3.CNF" Destination="OUTletletPassPalette_2.REQ" Comment=""/>
+					<Connection Source="Trans_C6_2.CNF" Destination="Trans_M2_3.REQ" Comment=""/>
+					<Connection Source="Trans_M2_2.CNF" Destination="Trans_C6_1.REQ" Comment=""/>
+					<Connection Source="Trans_S3_1.CNF" Destination="Trans_M2_2.REQ" Comment=""/>
+					<Connection Source="OUTletletPassPalette_2.CNF" Destination="INletletPassPalette.REQ" Comment=""/>
+					<Connection Source="Trans_M1_1.CNF" Destination="INletletPassPalette.REQ" Comment=""/>
+					<Connection Source="INletletPassPalette.CNF" Destination="Trans_S3_1.REQ" Comment=""/>
+					<Connection Source="Transport.MovedPalette" Destination="Transport.GetPalette" Comment=""/>
+				</EventConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Mapping From="Application.Supply_C3_1" To="Supply_Unit.EMB_RES.Supply_C3_1"/>
+	<Mapping From="Application.Supply_C3_2" To="Supply_Unit.EMB_RES.Supply_C3_2"/>
+	<Mapping From="Application.PnPHW" To="PnP_Unit.EMB_RES.PnPHW"/>
+	<Mapping From="Application.PnP_C10_1" To="PnP_Unit.EMB_RES.PnP_C10_1"/>
+	<Mapping From="Application.PnP_C4_1" To="PnP_Unit.EMB_RES.PnP_C4_1"/>
+	<Mapping From="Application.PnP_ApplyCap" To="PnP_Unit.EMB_RES.PnP_ApplyCap"/>
+	<Mapping From="Application.PnP_C4_2" To="PnP_Unit.EMB_RES.PnP_C4_2"/>
+	<Mapping From="Application.TransHW" To="Transport_Unit.EMB_RES.TransHW"/>
+	<Mapping From="Application.OUTletletPassPalette_2" To="Transport_Unit.EMB_RES.OUTletletPassPalette_2"/>
+	<Mapping From="Application.Trans_M2_3" To="Transport_Unit.EMB_RES.Trans_M2_3"/>
+	<Mapping From="Application.Trans_C6_2" To="Transport_Unit.EMB_RES.Trans_C6_2"/>
+	<Mapping From="Application.Trans_C6_1" To="Transport_Unit.EMB_RES.Trans_C6_1"/>
+	<Mapping From="Application.Trans_M2_2" To="Transport_Unit.EMB_RES.Trans_M2_2"/>
+	<Mapping From="Application.Trans_S3_1" To="Transport_Unit.EMB_RES.Trans_S3_1"/>
+	<Mapping From="Application.Trans_M1_1" To="Transport_Unit.EMB_RES.Trans_M1_1"/>
+	<Mapping From="Application.INletletPassPalette" To="Transport_Unit.EMB_RES.INletletPassPalette"/>
+	<Mapping From="Application.Supply_GetNewCap" To="Supply_Unit.EMB_RES.Supply_GetNewCap"/>
+	<Mapping From="Application.SupplyHW" To="Supply_Unit.EMB_RES.SupplyHW"/>
+	<Segment Name="Ethernet" Type="Ethernet" Comment="" x="3200.0" y="2000.0" dx1="2660.0">
+		<Attribute Name="Color" Type="STRING" Value="192,192,192" Comment="color"/>
+	</Segment>
+	<Link SegmentName="Ethernet" CommResource="Supply_Unit" Comment="">
+	</Link>
+	<Link SegmentName="Ethernet" CommResource="PnP_Unit" Comment="">
+	</Link>
+	<Link SegmentName="Ethernet" CommResource="Transport_Unit" Comment="">
+	</Link>
+</System>

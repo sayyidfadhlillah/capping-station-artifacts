@@ -1,3 +1,3 @@
 CD1) BusinessVariability.Capacity>100 && BusinessVariability.Area>50 == CappingStation.DoubleGripper;
 CD2) CappingStation.PressureNotReached && CappingStation.InletStopper => BusinessVariability.ROI>150;
-CD3) BusinessVariability.Fund<=5 => CappingStation.InletS1 && CappingStation.OutletS3;
+CD3) BusinessVariability.Fund<=5 => !CappingStation.InletS1 && !CappingStation.OutletS3;

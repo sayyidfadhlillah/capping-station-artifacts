@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="CappingStation">
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" mandatory="true" name="PickNPlace">
+				<alt abstract="true" mandatory="true" name="GripperAlg">
+					<and name="DoubleTap">
+						<feature name="PressureNotReached"/>
+					</and>
+					<feature name="Normal"/>
+				</alt>
+				<alt mandatory="true" name="GripperType">
+					<feature name="VacuumArm"/>
+					<feature name="ClawArm"/>
+				</alt>
+			</and>
+			<and abstract="true" mandatory="true" name="Supply">
+				<feature name="CapQualityChecker"/>
+			</and>
+			<and abstract="true" mandatory="true" name="Transport">
+				<and mandatory="true" name="TStopper">
+					<graphics key="collapsed" value="false"/>
+					<attribute configurable="true" name="InstanceNum" type="string" unit="" value="1..2"/>
+					<feature mandatory="true" name="LeftSens"/>
+					<feature name="RightSens"/>
+				</and>
+				<alt mandatory="true" name="WorkingStation">
+					<feature name="SingleProduct"/>
+					<feature name="DoubleProduct"/>
+				</alt>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>DoubleProduct</var>
+				<var>Normal</var>
+			</imp>
+		</rule>
+	</constraints>
+</extendedFeatureModel>

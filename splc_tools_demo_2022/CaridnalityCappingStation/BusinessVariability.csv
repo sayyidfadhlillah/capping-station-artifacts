@@ -1,0 +1,4 @@
+ID;Question;Type;Range;Cardinality;Constraint/Rule;Visible/relevant if
+Q1;What is your planned Production Capacity?;Enumeration;Capacity>100 | Capacity<=100;1:1;;true
+Q2;What is your planned Return of Investment?;Enumeration;ROI>150 | ROI<=150;1:1;;true
+Q3;How much is your initial fund?;Enumeration;Fund>5 | Fund<=5;1:1;;true

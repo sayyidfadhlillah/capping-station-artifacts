@@ -1,0 +1,20 @@
+delta DRemSecondSensInPalette;
+uses Application;
+
+{
+    <Modify> Subapplication INletletPassPalette {
+        <Add> InputVars moveTime type=Time;
+		<Modify> Variable moveTime value="T#250ms";
+		<Add> FB E_DELAY type=E_DELAY;
+		<Add> EventConnection Trans_C1_Down.CNF Trans_S1_2.REQ;
+		<Add> EventConnection Trans_S1_2.CNF E_DELAY.START;
+		<Add> EventConnection E_DELAY.EO Trans_C1_Up.REQ;
+        <Add> DataConnection moveTime E_DELAY.DT;
+        <Remove> EventConnection Trans_S1_2.CNF Trans_S2_2.REQ;
+		<Remove> EventConnection Trans_C1_Down.CNF Trans_S2_1.REQ;
+		<Remove> EventConnection Trans_S2_2.CNF Trans_C1_Up.REQ;
+		<Remove> EventConnection Trans_S2_1.CNF Trans_S1_2.REQ;
+        <Remove> FB Trans_S2_2;
+		<Remove> FB Trans_S2_1;
+    }
+}

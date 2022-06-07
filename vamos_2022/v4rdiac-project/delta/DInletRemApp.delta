@@ -1,0 +1,12 @@
+delta DInletRemApp;
+uses Application;
+
+{
+	<Add> EventConnection Trans_M1_1.CNF Trans_S3_1.REQ;
+    <Add> EventConnection OUTletletPassPalette_2.CNF Trans_S3_1.REQ;
+    <Remove> EventConnection INletletPassPalette.CNF Trans_S3_1.REQ;
+	<Remove> EventConnection OUTletletPassPalette_2.CNF INletletPassPalette.REQ;
+	<Remove> EventConnection Trans_M1_1.CNF INletletPassPalette.REQ;
+    <Remove> Subapplication INletletPassPalette;
+}
+

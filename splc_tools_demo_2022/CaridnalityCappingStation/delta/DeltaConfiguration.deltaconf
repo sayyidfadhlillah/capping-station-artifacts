@@ -1,0 +1,27 @@
+productline CappingStation;
+variations CappingStation#PickNPlace, CappingStation#PickNPlace#GripperAlg,
+	CappingStation#PickNPlace#GripperAlg#DoubleTap, CappingStation#PickNPlace#GripperAlg#DoubleTap#PressureNotReached,
+	CappingStation#Supply, CappingStation#Supply#CapQualityChecker, 
+	CappingStation#Transport, CappingStation#Transport#TStopper_1, CappingStation#Transport#TStopper_1#LeftSens, CappingStation#Transport#TStopper_1#RightSens, 
+	CappingStation#Transport#TStopper_2, CappingStation#Transport#TStopper_2#LeftSens, CappingStation#Transport#TStopper_2#RightSens,
+        CappingStation#Transport#WorkingStation, CappingStation#Transport#WorkingStation#SingleProduct, CappingStation#Transport#WorkingStation#DoubleProduct;
+
+delta DRepressCap when CappingStation#PickNPlace#GripperAlg#DoubleTap || CappingStation#PickNPlace#GripperAlg#DoubleTap#PressureNotReached || 
+	CappingStation#Transport#WorkingStation#DoubleProduct;
+delta DApplyCapPresNotReached when CappingStation#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
+delta DRepressCapPresNotReached after DRepressCap when CappingStation#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
+delta DRepressCapForTwoCaps after DRepressCap when CappingStation#Transport#WorkingStation#DoubleProduct;
+delta DSecondGetCapForTwoCaps when CappingStation#Transport#WorkingStation#DoubleProduct;
+delta DInletRemSkillsFB when !CappingStation#Transport#TStopper_1;
+delta DInletRemTransHW when !CappingStation#Transport#TStopper_1;
+delta DRemSecondSensBasicSkills when !(CappingStation#Transport#TStopper_1#RightSens && CappingStation#Transport#TStopper_2#RightSens);
+delta DRemSecondSensTransHW when !(CappingStation#Transport#TStopper_1#RightSens && CappingStation#Transport#TStopper_2#RightSens);
+delta DRemSecondSensInPalette when !CappingStation#Transport#TStopper_1#RightSens;
+delta DRemSecondSensOutPalette when !CappingStation#Transport#TStopper_2#RightSens;
+delta DDoubleTapApp when CappingStation#PickNPlace#GripperAlg#DoubleTap;
+delta DApplicationPresNotReached after DDoubleTapApp when CappingStation#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
+delta DApplicationForTwoCaps when CappingStation#Transport#WorkingStation#DoubleProduct;
+delta DInletRemApp when !CappingStation#Transport#TStopper_1;
+delta DRemS2InletSens when !CappingStation#Transport#TStopper_1#RightSens;
+delta DCapQualityFunctionality when CappingStation#Supply#CapQualityChecker;
+delta DCapQualityApp after DCapQualityFunctionality when CappingStation#Supply#CapQualityChecker;

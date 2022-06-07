@@ -1,0 +1,14 @@
+delta DCapQualityFunctionality;
+uses Application;
+
+{
+    <Create> Subapplication CapQualitySubApp {
+        <Add> EventInput REQ type=Event;
+		<Add> EventOutput CNF type=Event;
+		<Add> FB CapChecker type=SkillFB;
+		<Add> FB CapRemover type=SkillFB;
+		<Add> EventConnection REQ CapChecker.REQ;
+		<Add> EventConnection CapChecker.CNF CNF;
+		<Add> EventConnection CapChecker.Error CapRemover.REQ;
+    }
+}

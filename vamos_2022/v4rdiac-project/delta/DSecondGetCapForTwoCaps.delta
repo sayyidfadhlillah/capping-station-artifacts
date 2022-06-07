@@ -1,0 +1,16 @@
+delta DSecondGetCapForTwoCaps;
+uses Application;
+
+{
+    <Create> Subapplication Supply_GetNewCap_2 {
+        <Add> EventInput REQ type=Event;
+		<Add> EventOutput CNF type=Event;
+		<Add> FB Supply_M1_2 type=SkillFB;
+		<Add> FB Supply_M1_1 type=SkillFB;
+		<Add> FB Supply_S5_1 type=SkillFB;
+		<Add> EventConnection Supply_S5_1.CNF Supply_M1_2.REQ;
+		<Add> EventConnection Supply_M1_1.CNF Supply_S5_1.REQ;
+		<Add> EventConnection Supply_M1_2.CNF CNF;
+		<Add> EventConnection REQ Supply_M1_1.REQ;
+    }
+}

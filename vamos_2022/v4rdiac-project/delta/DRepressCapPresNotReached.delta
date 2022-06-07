@@ -1,0 +1,13 @@
+delta DRepressCapPresNotReached;
+uses Application;
+
+{
+    <Modify> Subapplication PnP_RepressCap {
+        <Add> EventOutput Error type=Event;
+		<Add> FB PnP_PressureSens_3 type=SkillFB;
+		<Add> EventConnection PnP_C5_1.CNF PnP_PressureSens_3.REQ;
+		<Add> EventConnection PnP_PressureSens_3.CNF PnP_PressureSens_2.REQ;
+		<Add> EventConnection PnP_PressureSens_3.Error Error;
+		<Remove> EventConnection PnP_C5_1.CNF PnP_PressureSens_2.REQ;
+    }
+}

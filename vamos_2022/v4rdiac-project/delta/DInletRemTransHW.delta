@@ -1,0 +1,9 @@
+delta DInletRemTransHW;
+uses Application.TransHW;
+
+{
+    <Add> EventConnection M2.INITO C2_OutletStopper.INIT;
+	<Remove> EventConnection C1_InletStopper.INITO C2_OutletStopper.INIT;
+	<Remove> EventConnection M2.INITO C1_InletStopper.INIT;
+    <Remove> FB C1_InletStopper;
+}

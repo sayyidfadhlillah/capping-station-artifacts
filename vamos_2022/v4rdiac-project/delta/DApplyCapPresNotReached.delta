@@ -1,0 +1,19 @@
+delta DApplyCapPresNotReached;
+uses Application;
+
+{
+    <Modify> Subapplication PnP_ApplyCap {
+    	<Add> EventOutput Error type=Event;
+		<Add> FB PnP_PressureSens_3 type=SkillFB; 
+		<Add> FB PnP_PressureSens_4 type=SkillFB;
+		<Add> FB PnP_C10_2 type=SkillFB;
+		<Add> FB PnP_C5_3 type=SkillFB;
+	    <Add> EventConnection PnP_C5_1.CNF PnP_PressureSens_3.REQ;
+		<Add> EventConnection PnP_PressureSens_3.CNF PnP_PressureSens_2.REQ;
+		<Add> EventConnection PnP_PressureSens_3.Error PnP_PressureSens_4.REQ;
+		<Add> EventConnection PnP_PressureSens_4.CNF PnP_C10_2.REQ;
+		<Add> EventConnection PnP_C10_2.CNF PnP_C5_3.REQ;
+		<Add> EventConnection PnP_C5_3.CNF Error;
+		<Remove> EventConnection PnP_C5_1.CNF PnP_PressureSens_2.REQ;
+    }
+}

@@ -1,0 +1,8 @@
+delta DRemS2InletSens;
+uses Application;
+
+{
+    <Modify> Subapplication SubApp{
+        <Remove> FB Trans_S2_InletSens;
+    }
+}

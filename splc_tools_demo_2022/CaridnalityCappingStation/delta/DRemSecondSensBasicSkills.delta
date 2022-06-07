@@ -1,0 +1,8 @@
+delta DRemSecondSensBasicSkills;
+uses Application;
+
+{
+    <Modify> Subapplication SubApp{
+        <Remove> FB Trans_S4_OutletSens;
+    }
+}

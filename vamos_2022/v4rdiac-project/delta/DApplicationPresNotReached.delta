@@ -1,0 +1,11 @@
+delta DApplicationPresNotReached;
+uses Application;
+
+{
+	<Add> EventConnection PnP_ApplyCap.CNF E_REND.EI2;
+	<Add> EventConnection PnP_ApplyCap.CNF PnP_C4_2.REQ;
+	<Add> EventConnection PnP_ApplyCap.CNF Trans_C6_2.REQ;
+	<Add> EventConnection PnP_ApplyCap.Error PnP_RepressCap.REQ;
+    <Remove> EventConnection PnP_RepressCap.CNF E_REND.EI2;
+    <Remove> EventConnection PnP_ApplyCap.CNF PnP_RepressCap.REQ;
+}

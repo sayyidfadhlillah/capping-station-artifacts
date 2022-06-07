@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workflow>
+    <step description="" name="Business" num="0">
+        <fm name="BusinessVariability" path="C:\prepackaged-featide-eclipse\workspace\capstat-splc-ver2\BusinessVariability.csv"/>
+    </step>
+    <step description="" name="Mechatronic" num="1">
+        <fm name="model.xml" path="C:\prepackaged-featide-eclipse\workspace\capstat-splc-ver2\model.xml"/>
+    </step>
+</workflow>

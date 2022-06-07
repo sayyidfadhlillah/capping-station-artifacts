@@ -1,0 +1,4 @@
+CD1) BusinessVariability == CappingStation;
+CD2) CappingStation#PickNPlace#GripperAlg#DoubleTap#PressureNotReached == BusinessVariability#Q2#ROI>150;
+CD3) BusinessVariability#Q3#Fund<=5 => !CappingStation#Supply#CapQualityChecker;
+CD4) BusinessVariability#Q1#Capacity>100 && BusinessVariability#Q3#Fund>5 => CappingStation#Transport#WorkingStation#DoubleProduct;

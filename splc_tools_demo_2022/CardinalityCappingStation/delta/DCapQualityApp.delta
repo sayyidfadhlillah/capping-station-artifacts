@@ -4,7 +4,7 @@ uses Application;
 {
     <Remove> EventConnection Supply_C3_2.CNF Supply_GetNewCap.REQ;
     <Remove> EventConnection Supply_C3_2.CNF PnP_C4_1.REQ;
-    <Add> EventConnection Supply_C3_2.CNF CapQualitySubApp.REQ
+    <Add> EventConnection Supply_C3_2.CNF CapQualitySubApp.REQ;
     <Add> EventConnection CapQualitySubApp.CNF Supply_GetNewCap.REQ;
     <Add> EventConnection CapQualitySubApp.CNF PnP_C4_1.REQ;
 }

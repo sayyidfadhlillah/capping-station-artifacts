@@ -1,0 +1,18 @@
+delta DDigitalSensTransHW;
+uses Application.TransHW;
+{
+	<Add> FB name=S1_InletSensor1 type=DigitalSens;
+	<Add> FB name=S2_InletSensor2 type=DigitalSens;
+	<Add> FB name=S3_OutletSensor1 type=DigitalSens;
+	<Add> FB name=S4_OutletSensor2 type=DigitalSens;
+	<Add> EventConnection source=C2_OutletStopper.INITO dest=S1_InletSensor1.INIT;
+	<Add> EventConnection source=S1_InletSensor1.INITO dest=S2_InletSensor2.INIT;
+	<Add> EventConnection source=S2_InletSensor2.INITO dest=S3_OutletSensor1.INIT;
+	<Add> EventConnection source=S3_OutletSensor1.INITO dest=S4_OutletSensor2.INIT;
+	<Add> EventConnection source=S4_OutletSensor2.INITO dest=INITO;
+	
+	<Remove> NetworkElement name=S1_InletSensor1;
+	<Remove> NetworkElement name=S2_InletSensor2;
+	<Remove> NetworkElement name=S3_OutletSensor1;
+	<Remove> NetworkElement name=S4_OutletSensor2;
+}

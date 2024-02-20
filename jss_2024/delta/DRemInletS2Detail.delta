@@ -1,0 +1,15 @@
+delta DRemInletS2Detail;
+uses Application.INletletPassPalette;
+
+{
+	<Add> FB name=E_DELAY type=E_DELAY;
+	<Add> EventConnection source=Trans_C1_Down.CNF dest=Trans_S1_2.REQ;
+	<Add> EventConnection source=Trans_S1_2.CNF dest=E_DELAY.START;
+	<Add> EventConnection source=E_DELAY.EO dest=Trans_C1_Up.REQ;
+    <Remove> Connection source=Trans_S1_2.CNF dest=Trans_S2_2.REQ;
+	<Remove> Connection source=Trans_C1_Down.CNF dest=Trans_S2_1.REQ;
+	<Remove> Connection source=Trans_S2_2.CNF dest=Trans_C1_Up.REQ;
+	<Remove> Connection source=Trans_S2_1.CNF dest=Trans_S1_2.REQ;
+    <Remove> NetworkElement name=Trans_S2_2;
+	<Remove> NetworkElement name=Trans_S2_1;
+}

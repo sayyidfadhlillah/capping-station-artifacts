@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extendedFeatureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="CSDesign">
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" mandatory="true" name="PickNPlace">
+				<alt abstract="true" mandatory="true" name="GripperAlg">
+					<and name="DoubleTap">
+						<feature name="PressureNotReached"/>
+					</and>
+					<feature name="Normal"/>
+				</alt>
+				<alt mandatory="true" name="GripperType">
+					<feature name="SingleCap"/>
+					<feature name="DoubleCap"/>
+				</alt>
+			</and>
+			<and abstract="true" mandatory="true" name="Transport">
+				<alt mandatory="true" name="GripStation">
+					<feature name="SingleContainer"/>
+					<feature name="DoubleContainer"/>
+				</alt>
+				<and name="C1Stopper">
+					<feature mandatory="true" name="InletS1"/>
+					<feature name="InletS2"/>
+				</and>
+				<and mandatory="true" name="C2Stopper">
+					<feature mandatory="true" name="OutletS3"/>
+					<feature name="OutletS4"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<conj>
+					<var>DoubleCap</var>
+					<var>DoubleContainer</var>
+				</conj>
+				<conj>
+					<var>Normal</var>
+					<var>InletS2</var>
+				</conj>
+			</imp>
+		</rule>
+		<rule>
+			<eq>
+				<var>DoubleCap</var>
+				<var>DoubleContainer</var>
+			</eq>
+		</rule>
+		<rule>
+			<eq>
+				<var>InletS2</var>
+				<var>OutletS4</var>
+			</eq>
+		</rule>
+	</constraints>
+</extendedFeatureModel>

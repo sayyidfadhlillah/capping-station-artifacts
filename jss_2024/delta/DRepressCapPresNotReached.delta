@@ -1,0 +1,8 @@
+delta DRepressCapPresNotReached;
+uses Application;
+
+{
+    <Modify> Subapplication name=PnP_RepressCap {
+        <Add> InterfaceElement Output name=Error type=Event;
+    }
+}

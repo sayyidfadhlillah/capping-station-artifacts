@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FBType Name="DigitalSens" Comment="Composite FB wrapping other FBs">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="AK120569" Date="2021-03-18">
+	</VersionInfo>
+	<InterfaceList>
+		<EventInputs>
+			<Event Name="INIT" Type="Event" Comment="Initialization Request">
+			</Event>
+		</EventInputs>
+		<EventOutputs>
+			<Event Name="INITO" Type="Event" Comment="Initialization Confirm">
+			</Event>
+		</EventOutputs>
+		<InputVars>
+			<VarDeclaration Name="pubAdr" Type="WSTRING" Comment=""/>
+			<VarDeclaration Name="subAdr" Type="WSTRING" Comment=""/>
+		</InputVars>
+	</InterfaceList>
+	<FBNetwork>
+		<FB Name="SkillReq" Type="SUBSCRIBE_1" Comment="" x="-209.0909090909091" y="322.72727272727275">
+		</FB>
+		<FB Name="SensorStatus" Type="IX" Comment="" x="900.0" y="822.7272727272727">
+		</FB>
+		<FB Name="PUBLISH_1" Type="PUBLISH_1" Comment="" x="2822.7272727272725" y="136.36363636363637">
+		</FB>
+		<FB Name="SensMsg" Type="SensMsg" Comment="" x="1877.2727272727273" y="431.8181818181818">
+		</FB>
+		<EventConnections>
+			<Connection Source="INIT" Destination="SkillReq.INIT" Comment="" dx1="677.2727272727273"/>
+			<Connection Source="SkillReq.IND" Destination="SensMsg.Req" Comment="" dx1="1118.1818181818182" dx2="245.45454545454547" dy="0.0"/>
+			<Connection Source="SensorStatus.IND" Destination="SensMsg.Sens" Comment="" dx1="209.0909090909091" dx2="100.0" dy="-390.90909090909093"/>
+			<Connection Source="SensMsg.Cnf" Destination="PUBLISH_1.REQ" Comment="" dx1="100.0"/>
+			<Connection Source="SkillReq.INITO" Destination="SensorStatus.INIT" Comment="" dx1="177.27272727272728"/>
+			<Connection Source="SensorStatus.INITO" Destination="PUBLISH_1.INIT" Comment="" dx1="136.36363636363637" dx2="1045.4545454545455" dy="-536.3636363636364"/>
+			<Connection Source="PUBLISH_1.INITO" Destination="INITO" Comment="" dx1="100.0"/>
+		</EventConnections>
+		<DataConnections>
+			<Connection Source="pubAdr" Destination="PUBLISH_1.ID" Comment="" dx1="604.5454545454545" dx2="218.1818181818182" dy="-45.45454545454545"/>
+			<Connection Source="subAdr" Destination="SkillReq.ID" Comment="" dx1="604.5454545454545"/>
+			<Connection Source="SkillReq.RD_1" Destination="SensMsg.DI1" Comment="" dx1="100.0" dx2="172.72727272727272" dy="-336.3636363636364"/>
+			<Connection Source="SensMsg.DO1" Destination="PUBLISH_1.SD_1" Comment="" dx1="100.0"/>
+			<Connection Source="SensorStatus.IN" Destination="SensMsg.DI2" Comment="" dx1="286.3636363636364"/>
+		</DataConnections>
+	</FBNetwork>
+</FBType>

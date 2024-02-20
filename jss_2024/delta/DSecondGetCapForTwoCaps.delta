@@ -1,0 +1,10 @@
+delta DSecondGetCapForTwoCaps;
+uses Application;
+
+{
+    <Create> Subapplication name=Supply_GetNewCap_2 {
+        <Add> InterfaceElement Input name=REQ type=Event;
+		<Add> InterfaceElement Output name=CNF type=Event;
+    }
+
+}

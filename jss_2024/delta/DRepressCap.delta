@@ -1,0 +1,9 @@
+delta DRepressCap;
+uses Application;
+
+{
+    <Create> Subapplication name=PnP_RepressCap {
+        <Add> InterfaceElement Input name=REQ type=Event;
+		<Add> InterfaceElement Output name= CNF type=Event;
+    }
+}

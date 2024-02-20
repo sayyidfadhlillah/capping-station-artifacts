@@ -1,0 +1,35 @@
+ID;Question;Type;Range;Cardinality;Constraint/Rule;Visible/relevant if
+ProductType;Choose your ProductType?;Enumeration;Soda | Smoothies | FruitJuice | StillWater | Alcoholic;1:1;;true
+ContainerType;Choose your ContainerType?;Enumeration;GlassBottle | PlasticBottle | AlumuniumBottle | CartonBox ;1:1;"
+if(ProductType.Alcoholic) {
+    disAllow(ContainerType.PlasticBottle);
+}
+if(ProductType.Alcoholic) {
+    disAllow(ContainerType.CartonBox);
+}
+if(ProductType.Soda) {
+    disAllow(ContainerType.PlasticBottle);
+}
+if(ProductType.Soda) {
+    disAllow(ContainerType.CartonBox);
+}
+if(ProductType.Smoothies) {
+    ContainerType = CartonBox;
+}
+";(isTaken(ProductType))
+CapType;Choose your CapType?;Enumeration;Plastic | Alumunium;1:1;"
+if (ContainerType.AlumuniumBottle) {
+    CapType = Alumunium;
+}
+if (ContainerType.GlassBottle) {
+    CapType = Alumunium;
+}
+if(ContainerType.PlasticBottle){
+    CapType = Plastic;
+}
+if(ContainerType.CartonBox){
+    CapType = Plastic;
+}
+";(isTaken(ContainerType))
+FactoryArea;Choose your FactoryArea?;Enumeration;Area<20 | 20<=Area<40 | Area>40;1:1;;(isTaken(CapType))
+InitialFund;Choose your InitialFund?;Enumeration;Fund<=10 | Fund>10;1:1;;(isTaken(FactoryArea))

@@ -1,0 +1,9 @@
+delta DRepressCapForTwoCaps;
+uses Application.PnP_RepressCap;
+
+{
+    <Add> FB name=PnP_C10_1 type=SkillFB;
+    <Add> EventConnection source=PnP_PressureSens_2.CNF dest=PnP_C10_1.REQ;
+	<Add> EventConnection source=PnP_C10_1.CNF dest=PnP_C5_2.REQ;
+    <Remove> Connection source=PnP_PressureSens_2.CNF dest=PnP_C5_2.REQ;
+}

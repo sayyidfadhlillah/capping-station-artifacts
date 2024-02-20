@@ -1,0 +1,10 @@
+delta DDoubleTapApp;
+uses Application;
+
+{
+    <Add> EventConnection source=PnP_RepressCap.CNF dest=PnP_C4_2.REQ;
+	<Add> EventConnection source=PnP_RepressCap.CNF dest=Trans_C6_2.REQ;
+	<Add> EventConnection source=PnP_ApplyCap.CNF dest=PnP_RepressCap.REQ;
+	<Remove> Connection source=PnP_ApplyCap.CNF dest=Trans_C6_2.REQ;
+	<Remove> Connection source=PnP_ApplyCap.CNF dest=PnP_C4_2.REQ;
+}

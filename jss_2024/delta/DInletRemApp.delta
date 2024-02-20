@@ -1,0 +1,10 @@
+delta DInletRemApp;
+uses Application;
+
+{
+	<Add> EventConnection source=Trans_C8_1.CNF dest=Trans_S3_1.REQ;
+    <Add> EventConnection source=OUTletletPassPalette_2.CNF dest=Trans_S3_1.REQ;
+    <Remove> NetworkElement name=INletletPassPalette;
+    <Add> FB name=E_DELAY type=E_DELAY;
+}
+

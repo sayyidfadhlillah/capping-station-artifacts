@@ -1,0 +1,8 @@
+delta DModularBelt;
+uses Application.TransHW;
+{
+	<Remove> NetworkElement name=C8;
+	<Add> FB name=C8_Modular type=ModularBelt;
+	<Add> EventConnection source=INIT dest=C8_Modular.INIT;
+	<Add> EventConnection source=C8_Modular.INITO dest=C1_InletStopper.INIT;
+}

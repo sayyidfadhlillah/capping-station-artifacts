@@ -1,0 +1,9 @@
+delta DSupplyHWDigital;
+uses Application.SupplyHW;
+
+{
+	<Add> FB name=S5_PartSensor_New type=DigitalSens;
+	<Add> EventConnection source=C3.INITO dest=S5_PartSensor_New.INIT;
+	<Add> EventConnection source=S5_PartSensor_New.INITO dest=C7.INIT;
+	<Remove> NetworkElement name=S5_PartSensor;
+}

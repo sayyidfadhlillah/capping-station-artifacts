@@ -1,0 +1,8 @@
+delta DVacuumGripper;
+uses Application.PnPHW;
+{
+	<Remove> NetworkElement name=C10;
+	<Add> FB name=C10_New type=VacuumGripper;
+	<Add> EventConnection source=INIT dest=C10_New.INIT;
+	<Add> EventConnection source=C10_New.INITO dest=C5_VCyl.INIT;
+}

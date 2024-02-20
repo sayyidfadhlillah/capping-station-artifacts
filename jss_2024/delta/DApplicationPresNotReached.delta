@@ -1,0 +1,13 @@
+delta DApplicationPresNotReached;
+uses Application;
+
+{
+	<Modify> Subapplication name=PnP_ApplyCap {
+    	<Add> InterfaceElement Output name=Error type=Event;
+    }
+	<Add> EventConnection source=PnP_ApplyCap.CNF dest=E_REND.EI2;
+	<Add> EventConnection source=PnP_ApplyCap.CNF dest=PnP_C4_2.REQ;
+	<Add> EventConnection source=PnP_ApplyCap.CNF dest=Trans_C6_2.REQ;
+	<Add> EventConnection source=PnP_ApplyCap.Error dest=PnP_RepressCap.REQ;
+    <Remove> Connection source=PnP_ApplyCap.CNF dest=PnP_RepressCap.REQ;
+}

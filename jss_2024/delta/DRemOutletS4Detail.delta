@@ -1,0 +1,13 @@
+delta DRemOutletS4Detail;
+uses Application.OUTletletPassPalette_2;
+
+{
+  <Add> FB name=E_DELAY type=E_DELAY;
+  <Add> EventConnection source=Trans_C2_Down.CNF dest=Trans_S3_2.REQ;
+  <Add> EventConnection source=Trans_S3_2.CNF dest=E_DELAY.START;
+  <Add> EventConnection source=E_DELAY.EO dest=Trans_C2_Up.REQ;
+  <Add> EventConnection source=REQ dest=Trans_C2_Down.REQ;
+  <Remove> NetworkElement name=Trans_S4_2;
+  <Remove> NetworkElement name=Trans_S4_1;
+  <Remove> NetworkElement name=Trans_S3_1;
+}

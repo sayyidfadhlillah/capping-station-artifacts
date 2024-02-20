@@ -1,0 +1,28 @@
+delta DApplicationForTwoCaps;
+uses Application;
+
+{
+	<Add> FB name=Supply_C3_4 type=SkillFB;
+	<Add> FB name=Supply_C3_3 type=SkillFB;
+	<Add> FB name=PnP_C10_2 type=SkillFB;
+	<Add> FB name=E_REND_1 type=E_REND;
+	<Add> FB name=E_REND_2 type=E_REND;
+	<Add> FB name=PnP_C4_3 type=SkillFB; 
+	<Add> FB name=PnP_C4_4 type=SkillFB;
+	<Add> EventConnection source=PnP_C10_2.CNF dest=Supply_C3_4.REQ;
+	<Add> EventConnection source=PnP_ApplyCap.CNF dest=E_REND.EI2;
+	<Add> EventConnection source=E_REND_1.EO dest=Supply_C3_1.REQ;
+	<Add> EventConnection source=PnP_C4_2.CNF dest=E_REND_2.EI1;
+	<Add> EventConnection source=Supply_C3_3.CNF dest=E_REND_2.EI2; 
+	<Add> EventConnection source=E_REND_2.EO dest=PnP_C10_2.REQ; 
+	<Add> EventConnection source=Supply_C3_4.CNF dest=Supply_GetNewCap_2.REQ; 
+	<Add> EventConnection source=Supply_GetNewCap_2.CNF dest=E_REND_1.EI1; 
+	<Add> EventConnection source=PnP_C4_3.CNF dest=PnP_RepressCap.REQ; 
+	<Add> EventConnection source=PnP_RepressCap.CNF dest=PnP_C4_4.REQ; 
+	<Add> EventConnection source=PnP_RepressCap.CNF dest=E_REND_1.EI2; 
+	<Add> EventConnection source=Supply_GetNewCap_2.CNF dest=PnP_C4_3.REQ; 
+	<Add> EventConnection source=E_REND.EO dest=Supply_C3_3.REQ; 
+	<Add> EventConnection source=PnP_RepressCap.CNF dest=Trans_C6_2.REQ;
+	<Remove> Connection source=E_REND.EO dest=Supply_C3_1.REQ;
+	<Remove> Connection source=PnP_ApplyCap.CNF dest=Trans_C6_2.REQ; 
+}

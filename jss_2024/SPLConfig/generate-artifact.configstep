@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workflow>
+	<step description="" name="Business" num="0">
+        <fm name="CSBusiness.csv" path="CSBusiness.csv"/>
+    </step>
+    <step description="" name="Physical Design" num="1">
+        <fm name="capping-stat-design.xml" path="capping-stat-design.xml"/>
+    </step>
+    <step description="" name="Hardware" num="2">
+        <fm name="capping-stat-hardware.xml" path="capping-stat-hardware.xml"/>
+    </step>
+</workflow>

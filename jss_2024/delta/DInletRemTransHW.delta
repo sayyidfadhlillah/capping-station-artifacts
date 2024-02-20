@@ -1,0 +1,9 @@
+delta DInletRemTransHW;
+uses Application.TransHW;
+
+{
+    <Add> EventConnection source=C8.INITO dest=C2_OutletStopper.INIT;
+    <Remove> NetworkElement name=C1_InletStopper;
+    <Remove> NetworkElement name=S1_InletSensor1;
+    <Remove> NetworkElement name=S2_InletSensor2;
+}

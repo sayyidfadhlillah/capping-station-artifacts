@@ -1,0 +1,17 @@
+delta DModApplyCapPressNotReached;
+uses Application.PnP_ApplyCap;
+
+
+{
+	<Add> FB name=PnP_PressureSens_3 type=SkillFB; 
+	<Add> FB name=PnP_PressureSens_4 type=SkillFB;
+	<Add> FB name=PnP_C10_2 type=SkillFB;
+	<Add> FB name=PnP_C5_3 type=SkillFB;
+    <Add> EventConnection source=PnP_C5_1.CNF dest=PnP_PressureSens_3.REQ;
+	<Add> EventConnection source=PnP_PressureSens_3.CNF dest=PnP_PressureSens_2.REQ;
+	<Add> EventConnection source=PnP_PressureSens_3.Error dest=PnP_PressureSens_4.REQ;
+	<Add> EventConnection source=PnP_PressureSens_4.CNF dest=PnP_C10_2.REQ;
+	<Add> EventConnection source=PnP_C10_2.CNF dest=PnP_C5_3.REQ;
+	<Add> EventConnection source=PnP_C5_3.CNF dest=Error;
+	<Remove> Connection source=PnP_C5_1.CNF dest=PnP_PressureSens_2.REQ;
+}

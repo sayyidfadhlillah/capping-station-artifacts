@@ -1,0 +1,8 @@
+delta DFlatBelt;
+uses Application.TransHW;
+{
+	<Remove> NetworkElement name=C8;
+	<Add> FB name=C8_Flat type=FlatBelt;
+	<Add> EventConnection source=INIT dest=C8_Flat.INIT;
+	<Add> EventConnection source=C8_Flat.INITO dest=C1_InletStopper.INIT;
+}

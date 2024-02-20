@@ -1,0 +1,12 @@
+delta DSupplyNewCapTwoDetail;
+uses Application.Supply_GetNewCap_2;
+
+{
+    <Add> FB name=Supply_M1_2 type=SkillFB;
+	<Add> FB name=Supply_M1_1 type=SkillFB;
+	<Add> FB name=Supply_S5_1 type=SkillFB;
+	<Add> EventConnection source=Supply_S5_1.CNF dest=Supply_M1_2.REQ;
+	<Add> EventConnection source=Supply_M1_1.CNF dest=Supply_S5_1.REQ;
+	<Add> EventConnection source=Supply_M1_2.CNF dest=CNF;
+	<Add> EventConnection source=REQ dest=Supply_M1_1.REQ;
+}

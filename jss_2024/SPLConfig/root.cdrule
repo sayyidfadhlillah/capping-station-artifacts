@@ -1,0 +1,7 @@
+CD1) CSBusiness#CapType#Plastic == CSHardware#Actuators#GripperType#Vacuum;
+CD2) CSHardware#Sensors#ObjectDetector#AnalogSensor || CSDesign#PickNPlace#GripperType#DoubleCap  => CSBusiness#InitialFund#Fund>10;
+CD3) CSHardware#Actuators#ConveyorBetls#RollerBed || CSHardware#Actuators#ConveyorBetls#FlatBelt => !CSBusiness#FactoryArea#Area<20;
+CD4) CSHardware#Actuators#ConveyorBetls#ModularBelt => CSBusiness#InitialFund#Fund>10;
+CD5) !CSDesign#Transport#C1Stopper#InletS2 == CSHardware#Sensors#ObjectDetector#AnalogSensor;
+CD6) CSBusiness == CSDesign;
+CD7) CSBusiness == CSHardware;

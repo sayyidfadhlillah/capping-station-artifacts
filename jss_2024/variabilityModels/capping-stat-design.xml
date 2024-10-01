@@ -30,13 +30,11 @@
 					<feature name="SingleContainer"/>
 					<feature name="DoubleContainer"/>
 				</alt>
-				<and name="C1Stopper">
-					<feature mandatory="true" name="InletS1"/>
-					<feature name="InletS2"/>
-				</and>
-				<and mandatory="true" name="C2Stopper">
-					<feature mandatory="true" name="OutletS3"/>
-					<feature name="OutletS4"/>
+				<and mandatory="true" name="Stopper">
+					<graphics key="collapsed" value="false"/>
+					<attribute configurable="true" name="InstanceNum" type="string" unit="" value="1..2"/>
+					<feature mandatory="true" name="InnerSens"/>
+					<feature name="OuterSens"/>
 				</and>
 			</and>
 		</and>
@@ -50,7 +48,6 @@
 				</conj>
 				<conj>
 					<var>Normal</var>
-					<var>InletS2</var>
 				</conj>
 			</imp>
 		</rule>
@@ -58,12 +55,6 @@
 			<eq>
 				<var>DoubleCap</var>
 				<var>DoubleContainer</var>
-			</eq>
-		</rule>
-		<rule>
-			<eq>
-				<var>InletS2</var>
-				<var>OutletS4</var>
 			</eq>
 		</rule>
 	</constraints>

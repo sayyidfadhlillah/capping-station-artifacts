@@ -1,5 +1,20 @@
 productline CappingStationJournal;
-variations CSDesign#Transport#C2Stopper,CSBusiness#CapType#Plastic,CSDesign#PickNPlace#GripperAlg#Normal,CSDesign#Transport#C1Stopper,CSBusiness#InitialFund,CSBusiness#ProductType#Soda,CSDesign#Transport#C1Stopper#InletS1,CSBusiness#FactoryArea#20<=Area<40,CSBusiness#InitialFund#Fund<=10,CSBusiness#FactoryArea,CSHardware#Sensors#PressureSensor#Absolute,CSBusiness#ProductType#StillWater,CSDesign#PickNPlace#GripperType#SingleCap,CSHardware#Actuators#ConveyorBelts,CSBusiness#ContainerType#CartonBox,CSDesign#PickNPlace#GripperAlg,CSBusiness#ContainerType#PlasticBottle,CSHardware#Sensors,CSDesign#Transport#GripStation#DoubleContainer,CSDesign#Transport#C1Stopper#InletS2,CSBusiness#ProductType,CSBusiness#ProductType#Alcoholic,CSBusiness#ContainerType,CSHardware#Sensors#ObjectDetector#DigitalSensor,CSDesign,CSHardware#Actuators#GripperType#Vacuum,CSBusiness,CSBusiness#FactoryArea#Area>40,CSBusiness#ProductType#Smoothies,CSDesign#Transport#GripStation,CSDesign#PickNPlace#GripperType#DoubleCap,CSHardware,CSHardware#Sensors#PressureSensor,CSDesign#Transport#GripStation#SingleContainer,CSHardware#Actuators#ConveyorBelts#FlatBelt,CSHardware#Sensors#PressureSensor#Gauge,CSBusiness#InitialFund#Fund>10,CSDesign#Transport#C2Stopper#OutletS4,CSBusiness#CapType#Alumunium,CSDesign#Transport#C2Stopper#OutletS3,CSHardware#Actuators#ConveyorBelts#RollerBed,CSHardware#Actuators#ConveyorBelts#ModularBelt,CSBusiness#ProductType#FruitJuice,CSHardware#Sensors#ObjectDetector#AnalogSensor,CSDesign#PickNPlace#GripperAlg#DoubleTap#PressureNotReached,CSDesign#PickNPlace#GripperAlg#DoubleTap,CSDesign#PickNPlace,CSHardware#Actuators#GripperType,CSHardware#Sensors#ObjectDetector,CSBusiness#CapType,CSBusiness#ContainerType#GlassBottle,CSHardware#Actuators,CSHardware#Actuators#GripperType#CraneArm,CSBusiness#FactoryArea#Area<20,CSDesign#Transport,CSDesign#PickNPlace#GripperType,CSBusiness#ContainerType#AlumuniumBottle,CSHardware#Sensors#PressureSensor#Differential;
+variations CSBusiness#CapType#Plastic,CSDesign#PickNPlace#GripperAlg#Normal,CSBusiness#InitialFund,CSBusiness#ProductType#Soda,
+			CSBusiness#FactoryArea#20<=Area<40,CSBusiness#InitialFund#Fund<=10,CSBusiness#FactoryArea,CSHardware#Sensors#PressureSensor#Absolute,
+			CSBusiness#ProductType#StillWater,CSDesign#PickNPlace#GripperType#SingleCap,CSHardware#Actuators#ConveyorBelts,
+			CSBusiness#ContainerType#CartonBox,CSDesign#PickNPlace#GripperAlg,CSBusiness#ContainerType#PlasticBottle,CSHardware#Sensors,
+			CSDesign#Transport#GripStation#DoubleContainer,CSBusiness#ProductType,CSDesign#Transport#Stopper_1#OuterSens,
+			CSBusiness#ProductType#Alcoholic,CSBusiness#ContainerType,CSHardware#Sensors#ObjectDetector#DigitalSensor,CSDesign,
+			CSDesign#Transport#Stopper,CSHardware#Actuators#GripperType#Vacuum,CSBusiness,CSBusiness#FactoryArea#Area>40,
+			CSBusiness#ProductType#Smoothies,CSDesign#Transport#GripStation,CSDesign#PickNPlace#GripperType#DoubleCap,
+			CSDesign#Transport#Stopper_2#InnerSens,CSHardware,CSHardware#Sensors#PressureSensor,CSDesign#Transport#GripStation#SingleContainer,
+			CSHardware#Actuators#ConveyorBelts#FlatBelt,CSHardware#Sensors#PressureSensor#Gauge,CSBusiness#InitialFund#Fund>10,
+			CSBusiness#CapType#Alumunium,CSHardware#Actuators#ConveyorBelts#RollerBed,CSHardware#Actuators#ConveyorBelts#ModularBelt,
+			CSBusiness#ProductType#FruitJuice,CSDesign#Transport#Stopper_2#OuterSens,CSHardware#Sensors#ObjectDetector#AnalogSensor,
+			CSDesign#PickNPlace#GripperAlg#DoubleTap#PressureNotReached,CSDesign#PickNPlace#GripperAlg#DoubleTap,CSDesign#PickNPlace,
+			CSHardware#Actuators#GripperType,CSHardware#Sensors#ObjectDetector,CSBusiness#CapType,CSBusiness#ContainerType#GlassBottle,
+			CSHardware#Actuators,CSDesign#Transport#Stopper_1#InnerSens,CSHardware#Actuators#GripperType#CraneArm,CSBusiness#FactoryArea#Area<20,
+			CSDesign#Transport,CSDesign#PickNPlace#GripperType,CSBusiness#ContainerType#AlumuniumBottle,CSHardware#Sensors#PressureSensor#Differential;
 
 delta DVacuumGripper when CSHardware#Actuators#GripperType#Vacuum;
 delta DFlatBelt when CSHardware#Actuators#ConveyorBelts#FlatBelt;
@@ -20,12 +35,13 @@ delta DApplicationForTwoCaps after DSecondGetCapForTwoCaps when CSDesign#PickNPl
 delta DDoubleTapApp after DRepressCapDetail when CSDesign#PickNPlace#GripperAlg#DoubleTap || 
 							CSDesign#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
 
-delta DInletRemApp when !CSDesign#Transport#C1Stopper;
-delta DInletRemTransHW after DInletRemApp when !CSDesign#Transport#C1Stopper;
-delta DRemInletS2Detail when CSDesign#Transport#C1Stopper && !CSDesign#Transport#C1Stopper#InletS2;
-delta DRemOutletS4Detail when CSDesign#Transport#C2Stopper && !CSDesign#Transport#C2Stopper#OutletS4;
+delta DInletRemApp when !(CSDesign#Transport#Stopper_2#InnerSens || CSDesign#Transport#Stopper_2#OuterSens);
+delta DInletRemTransHW after DInletRemApp when !(CSDesign#Transport#Stopper_2#InnerSens || CSDesign#Transport#Stopper_2#OuterSens);
+delta DRemInletS2Detail when CSDesign#Transport#Stopper_1#InnerSens && !CSDesign#Transport#Stopper_1#OuterSens;
+delta DRemOutletS4Detail when CSDesign#Transport#Stopper_2#InnerSens && !CSDesign#Transport#Stopper_2#OuterSens;
 
 delta DApplicationPresNotReached after DDoubleTapApp when CSDesign#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
 delta DModApplyCapPressNotReached after DApplicationPresNotReached when CSDesign#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
 delta DRepressCapPresNotReached after DModApplyCapPressNotReached when CSDesign#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
 delta DRepCapPresNotReachedDetail after DModApplyCapPressNotReached when CSDesign#PickNPlace#GripperAlg#DoubleTap#PressureNotReached;
+

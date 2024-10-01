@@ -6,7 +6,7 @@
 	</CompilerInfo>
 	<Application Name="Application" Comment="">
 		<SubAppNetwork>
-			<SubApp Name="PnPHW" Comment="" x="3331.818181818182" y="-100.0">
+			<SubApp Name="PnPHW" Comment="" x="3331.82" y="-100">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -18,23 +18,23 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<FB Name="C5_VCyl" Type="HWFB" Comment="" x="1200.0" y="-659.0909090909091">
+					<FB Name="C5_VCyl" Type="HWFB" Comment="" x="1200" y="-659.09">
 					</FB>
-					<FB Name="C4_HCyl" Type="HWFB" Comment="" x="2400.0" y="-659.0909090909091">
+					<FB Name="C4_HCyl" Type="HWFB" Comment="" x="2400" y="-659.09">
 					</FB>
-					<FB Name="C10" Type="CraneArmGripper" Comment="" x="-813.6363636363636" y="-450.0">
+					<FB Name="C10" Type="CraneArmGripper" Comment="" x="-813.64" y="-450">
 					</FB>
 					<EventConnections>
 						<Connection Source="C5_VCyl.INITO" Destination="C4_HCyl.INIT" Comment=""/>
-						<Connection Source="C4_HCyl.INITO" Destination="INITO" Comment="" dx1="418.1818181818182"/>
-						<Connection Source="INIT" Destination="C10.INIT" Comment="" dx1="950.0"/>
-						<Connection Source="C10.INITO" Destination="C5_VCyl.INIT" Comment="" dx1="563.6363636363636"/>
+						<Connection Source="C4_HCyl.INITO" Destination="INITO" Comment="" dx1="418.18"/>
+						<Connection Source="INIT" Destination="C10.INIT" Comment="" dx1="950"/>
+						<Connection Source="C10.INITO" Destination="C5_VCyl.INIT" Comment="" dx1="563.64"/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
 			</SubApp>
-			<SubApp Name="SupplyHW" Comment="" x="3331.818181818182" y="563.6363636363636">
+			<SubApp Name="SupplyHW" Comment="" x="3331.82" y="563.64">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -46,23 +46,23 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<FB Name="S5_PartSensor" Type="HRAnalog" Comment="" x="927.2727272727273" y="527.2727272727273">
+					<FB Name="S5_PartSensor" Type="HRAnalog" Comment="" x="927.27" y="527.27">
 					</FB>
-					<FB Name="C3" Type="HWFB" Comment="" x="-254.54545454545453" y="527.2727272727273">
+					<FB Name="C3" Type="HWFB" Comment="" x="-254.55" y="527.27">
 					</FB>
-					<FB Name="C7" Type="RollerBed" Comment="" x="2127.2727272727275" y="527.2727272727273">
+					<FB Name="C7" Type="RollerBed" Comment="" x="2127.27" y="527.27">
 					</FB>
 					<EventConnections>
-						<Connection Source="INIT" Destination="C3.INIT" Comment="" dx1="527.2727272727273"/>
+						<Connection Source="INIT" Destination="C3.INIT" Comment="" dx1="527.27"/>
 						<Connection Source="C3.INITO" Destination="S5_PartSensor.INIT" Comment=""/>
 						<Connection Source="S5_PartSensor.INITO" Destination="C7.INIT" Comment=""/>
-						<Connection Source="C7.INITO" Destination="INITO" Comment="" dx1="472.72727272727275"/>
+						<Connection Source="C7.INITO" Destination="INITO" Comment="" dx1="472.73"/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
 			</SubApp>
-			<SubApp Name="TransHW" Comment="" x="3331.818181818182" y="1227.2727272727273">
+			<SubApp Name="TransHW" Comment="" x="3331.82" y="1227.27">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -74,49 +74,49 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<FB Name="S4_OutletSensor2" Type="HRAnalog" Comment="" x="5327.272727272727" y="395.45454545454544">
+					<FB Name="S4_OutletSensor2" Type="HRAnalog" Comment="" x="5327.27" y="395.45">
 					</FB>
-					<FB Name="S1_InletSensor1" Type="HRAnalog" Comment="" x="1327.2727272727273" y="-527.2727272727273">
+					<FB Name="S1_InletSensor1" Type="HRAnalog" Comment="" x="1327.27" y="-527.27">
 					</FB>
-					<FB Name="S3_OutletSensor1" Type="HRAnalog" Comment="" x="4127.272727272727" y="-795.4545454545455">
+					<FB Name="S3_OutletSensor1" Type="HRAnalog" Comment="" x="4127.27" y="-795.45">
 					</FB>
-					<FB Name="S2_InletSensor2" Type="HRAnalog" Comment="" x="2800.0" y="527.2727272727273">
+					<FB Name="S2_InletSensor2" Type="HRAnalog" Comment="" x="2800" y="527.27">
 					</FB>
-					<FB Name="C8" Type="RollerBed" Comment="" x="-3195.4545454545455" y="-659.0909090909091">
+					<FB Name="C8" Type="RollerBed" Comment="" x="-3195.45" y="-659.09">
 					</FB>
-					<FB Name="C1_InletStopper" Type="HWFB" Comment="" x="-1727.2727272727273" y="-659.0909090909091">
+					<FB Name="C1_InletStopper" Type="HWFB" Comment="" x="-1727.27" y="-659.09">
 					</FB>
-					<FB Name="C2_OutletStopper" Type="HWFB" Comment="" x="-127.27272727272727" y="-527.2727272727273">
+					<FB Name="C2_OutletStopper" Type="HWFB" Comment="" x="-127.27" y="-527.27">
 					</FB>
 					<EventConnections>
-						<Connection Source="S4_OutletSensor2.INITO" Destination="INITO" Comment="" dx1="181.8181818181818"/>
-						<Connection Source="S3_OutletSensor1.INITO" Destination="S4_OutletSensor2.INIT" Comment="" dx1="186.36363636363637"/>
-						<Connection Source="S1_InletSensor1.INITO" Destination="S2_InletSensor2.INIT" Comment="" dx1="250.0"/>
-						<Connection Source="S2_InletSensor2.INITO" Destination="S3_OutletSensor1.INIT" Comment="" dx1="200.0"/>
-						<Connection Source="INIT" Destination="C8.INIT" Comment="" dx1="718.1818181818181"/>
+						<Connection Source="S4_OutletSensor2.INITO" Destination="INITO" Comment="" dx1="181.82"/>
+						<Connection Source="S3_OutletSensor1.INITO" Destination="S4_OutletSensor2.INIT" Comment="" dx1="186.36"/>
+						<Connection Source="S1_InletSensor1.INITO" Destination="S2_InletSensor2.INIT" Comment="" dx1="250"/>
+						<Connection Source="S2_InletSensor2.INITO" Destination="S3_OutletSensor1.INIT" Comment="" dx1="200"/>
+						<Connection Source="INIT" Destination="C8.INIT" Comment="" dx1="718.18"/>
 						<Connection Source="C8.INITO" Destination="C1_InletStopper.INIT" Comment=""/>
-						<Connection Source="C1_InletStopper.INITO" Destination="C2_OutletStopper.INIT" Comment="" dx1="286.3636363636364"/>
+						<Connection Source="C1_InletStopper.INITO" Destination="C2_OutletStopper.INIT" Comment="" dx1="286.36"/>
 						<Connection Source="C2_OutletStopper.INITO" Destination="S1_InletSensor1.INIT" Comment=""/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
 			</SubApp>
-			<FB Name="Start_1" Type="E_PERMIT" Comment="" x="2804.5454545454545" y="-900.0">
+			<FB Name="Start_1" Type="E_PERMIT" Comment="" x="2804.55" y="-900">
 			</FB>
-			<FB Name="Supply_C3_1" Type="SkillFB" Comment="" x="4850.0" y="-1018.1818181818181">
+			<FB Name="Supply_C3_1" Type="SkillFB" Comment="" x="4850" y="-1018.18">
 				<Parameter Name="msg" Value="'work'" Comment=""/>
 			</FB>
-			<FB Name="Supply_C3_2" Type="SkillFB" Comment="" x="6927.272727272727" y="-1018.1818181818181">
+			<FB Name="Supply_C3_2" Type="SkillFB" Comment="" x="6927.27" y="-1018.18">
 				<Parameter Name="msg" Value="'home'" Comment=""/>
 			</FB>
-			<FB Name="PnP_C10_1" Type="SkillFB" Comment="" x="5868.181818181818" y="-1018.1818181818181">
+			<FB Name="PnP_C10_1" Type="SkillFB" Comment="" x="5868.18" y="-1018.18">
 				<Parameter Name="msg" Value="'close'" Comment=""/>
 			</FB>
-			<FB Name="PnP_C4_1" Type="SkillFB" Comment="" x="7868.181818181818" y="-559.0909090909091">
+			<FB Name="PnP_C4_1" Type="SkillFB" Comment="" x="7868.18" y="-559.09">
 				<Parameter Name="msg" Value="'work'" Comment=""/>
 			</FB>
-			<SubApp Name="INletletPassPalette" Comment="Composite Skill to let a product pass through the stoper" x="5472.727272727273" y="418.1818181818182">
+			<SubApp Name="INletletPassPalette" Comment="Composite Skill to let a product pass through the stoper" x="5472.73" y="418.18">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -128,55 +128,55 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<FB Name="Trans_S1_2" Type="SkillFB" Comment="" x="-600.0" y="-6595.454545454545">
+					<FB Name="Trans_S1_2" Type="SkillFB" Comment="" x="-600" y="-6595.45">
 						<Parameter Name="msg" Value="'false'" Comment=""/>
 					</FB>
-					<FB Name="Trans_S2_2" Type="SkillFB" Comment="" x="300.0" y="-6595.454545454545">
+					<FB Name="Trans_S2_2" Type="SkillFB" Comment="" x="300" y="-6595.45">
 						<Parameter Name="msg" Value="'false'" Comment=""/>
 					</FB>
-					<FB Name="Trans_S1_1" Type="SkillFB" Comment="" x="-509.09090909090907" y="-7695.454545454545">
+					<FB Name="Trans_S1_1" Type="SkillFB" Comment="" x="-509.09" y="-7695.45">
 						<Parameter Name="msg" Value="'true'" Comment=""/>
 					</FB>
-					<FB Name="Trans_S2_1" Type="SkillFB" Comment="" x="1300.0" y="-7695.454545454545">
+					<FB Name="Trans_S2_1" Type="SkillFB" Comment="" x="1300" y="-7695.45">
 						<Parameter Name="msg" Value="'true'" Comment=""/>
 					</FB>
-					<FB Name="Trans_C1_Down" Type="SkillFB" Comment="" x="300.0" y="-7695.454545454545">
+					<FB Name="Trans_C1_Down" Type="SkillFB" Comment="" x="300" y="-7695.45">
 						<Parameter Name="msg" Value="'home'" Comment=""/>
 					</FB>
-					<FB Name="Trans_C1_Up" Type="SkillFB" Comment="" x="1200.0" y="-6595.454545454545">
+					<FB Name="Trans_C1_Up" Type="SkillFB" Comment="" x="1200" y="-6595.45">
 						<Parameter Name="msg" Value="'work'" Comment=""/>
 					</FB>
 					<EventConnections>
-						<Connection Source="Trans_S1_2.CNF" Destination="Trans_S2_2.REQ" Comment="" dx1="231.8181818181818"/>
-						<Connection Source="Trans_S1_1.CNF" Destination="Trans_C1_Down.REQ" Comment="" dx1="231.8181818181818"/>
-						<Connection Source="Trans_C1_Down.CNF" Destination="Trans_S2_1.REQ" Comment="" dx1="213.63636363636363" dx2="213.63636363636363" dy="0.0"/>
-						<Connection Source="REQ" Destination="Trans_S1_1.REQ" Comment="" dx1="300.0"/>
-						<Connection Source="Trans_S2_2.CNF" Destination="Trans_C1_Up.REQ" Comment="" dx1="195.45454545454547" dx2="195.45454545454547" dy="0.0"/>
-						<Connection Source="Trans_C1_Up.CNF" Destination="CNF" Comment="" dx1="195.45454545454547"/>
-						<Connection Source="Trans_S2_1.CNF" Destination="Trans_S1_2.REQ" Comment="" dx1="54.54545454545455" dx2="172.72727272727272" dy="754.5454545454545"/>
+						<Connection Source="Trans_S1_2.CNF" Destination="Trans_S2_2.REQ" Comment="" dx1="231.82"/>
+						<Connection Source="Trans_S1_1.CNF" Destination="Trans_C1_Down.REQ" Comment="" dx1="231.82"/>
+						<Connection Source="Trans_C1_Down.CNF" Destination="Trans_S2_1.REQ" Comment="" dx1="213.64" dx2="213.64" dy="0"/>
+						<Connection Source="REQ" Destination="Trans_S1_1.REQ" Comment="" dx1="300"/>
+						<Connection Source="Trans_S2_2.CNF" Destination="Trans_C1_Up.REQ" Comment="" dx1="195.45" dx2="195.45" dy="0"/>
+						<Connection Source="Trans_C1_Up.CNF" Destination="CNF" Comment="" dx1="195.45"/>
+						<Connection Source="Trans_S2_1.CNF" Destination="Trans_S1_2.REQ" Comment="" dx1="54.55" dx2="172.73" dy="754.55"/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
 			</SubApp>
-			<FB Name="Trans_S3_1" Type="SkillFB" Comment="" x="6404.545454545455" y="818.1818181818181">
+			<FB Name="Trans_S3_1" Type="SkillFB" Comment="" x="6404.55" y="818.18">
 				<Parameter Name="msg" Value="'true'" Comment=""/>
 			</FB>
-			<FB Name="Trans_C8_1" Type="SkillFB" Comment="" x="4722.727272727273" y="995.4545454545455">
+			<FB Name="Trans_C8_1" Type="SkillFB" Comment="" x="4722.73" y="995.45">
 				<Parameter Name="msg" Value="'on'" Comment=""/>
 			</FB>
-			<FB Name="Trans_C8_2" Type="SkillFB" Comment="" x="7604.545454545455" y="818.1818181818181">
+			<FB Name="Trans_C8_2" Type="SkillFB" Comment="" x="7604.55" y="818.18">
 				<Parameter Name="msg" Value="'off'" Comment=""/>
 			</FB>
-			<FB Name="Trans_C6_1" Type="SkillFB" Comment="" x="8804.545454545454" y="818.1818181818181">
+			<FB Name="Trans_C6_1" Type="SkillFB" Comment="" x="8804.55" y="818.18">
 				<Parameter Name="msg" Value="'fix'" Comment=""/>
 			</FB>
-			<FB Name="E_REND_4" Type="E_REND" Comment="" x="9150.0" y="-459.09090909090907">
+			<FB Name="E_REND_4" Type="E_REND" Comment="" x="9150" y="-459.09">
 			</FB>
-			<FB Name="Trans_C6_2" Type="SkillFB" Comment="" x="10668.181818181818" y="627.2727272727273">
+			<FB Name="Trans_C6_2" Type="SkillFB" Comment="" x="10668.18" y="627.27">
 				<Parameter Name="msg" Value="'release'" Comment=""/>
 			</FB>
-			<SubApp Name="OUTletletPassPalette_2" Comment="" x="12540.90909090909" y="686.3636363636364">
+			<SubApp Name="OUTletletPassPalette_2" Comment="OutletS2Stopper" x="12540.91" y="686.36">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -188,46 +188,47 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<FB Name="Trans_S3_2" Type="SkillFB" Comment="" x="2090.909090909091" y="1090.909090909091">
+					<FB Name="Trans_S3_2" Type="SkillFB" Comment="" x="-1000" y="-362.73">
 						<Parameter Name="msg" Value="'false'" Comment=""/>
 					</FB>
-					<FB Name="Trans_S4_2" Type="SkillFB" Comment="" x="2909.090909090909" y="-545.4545454545455">
+					<FB Name="Trans_S4_2" Type="SkillFB" Comment="" x="-0" y="-363.64">
 						<Parameter Name="msg" Value="'false'" Comment=""/>
 					</FB>
-					<FB Name="Trans_S3_1" Type="SkillFB" Comment="" x="-272.72727272727275" y="-363.6363636363636">
+					<FB Name="Trans_S3_1" Type="SkillFB" Comment="" x="-909.09" y="-2276.36">
 						<Parameter Name="msg" Value="'true'" Comment=""/>
 					</FB>
-					<FB Name="Trans_S4_1" Type="SkillFB" Comment="" x="1363.6363636363637" y="-454.54545454545456">
+					<FB Name="Trans_S4_1" Type="SkillFB" Comment="" x="1089.09" y="-2276.36">
 						<Parameter Name="msg" Value="'true'" Comment=""/>
 					</FB>
-					<FB Name="Trans_C2_Down" Type="SkillFB" Comment="" x="545.4545454545455" y="1181.8181818181818">
+					<FB Name="Trans_C2_Down" Type="SkillFB" Comment="" x="-3.03" y="-2276.36">
 						<Parameter Name="msg" Value="'home'" Comment=""/>
 					</FB>
-					<FB Name="Trans_C2_Up" Type="SkillFB" Comment="" x="3818.181818181818" y="818.1818181818181">
+					<FB Name="Trans_C2_Up" Type="SkillFB" Comment="" x="1089.09" y="-367.28">
 						<Parameter Name="msg" Value="'work'" Comment=""/>
 					</FB>
 					<EventConnections>
-						<Connection Source="Trans_S4_1.CNF" Destination="Trans_S3_2.REQ" Comment="" dx1="90.9090909090909"/>
-						<Connection Source="Trans_S3_2.CNF" Destination="Trans_S4_2.REQ" Comment="" dx1="218.1818181818182"/>
-						<Connection Source="Trans_S3_1.CNF" Destination="Trans_C2_Down.REQ" Comment="" dx1="195.45454545454547"/>
-						<Connection Source="Trans_C2_Down.CNF" Destination="Trans_S4_1.REQ" Comment="" dx1="54.54545454545455"/>
-						<Connection Source="REQ" Destination="Trans_S3_1.REQ" Comment="" dx1="404.54545454545456"/>
-						<Connection Source="Trans_S4_2.CNF" Destination="Trans_C2_Up.REQ" Comment="" dx1="136.36363636363637"/>
-						<Connection Source="Trans_C2_Up.CNF" Destination="CNF" Comment="" dx1="113.63636363636364"/>
+						<Connection Source="Trans_S4_1.CNF" Destination="Trans_S3_2.REQ" Comment="" dx1="86.36" dx2="54.55" dy="1293.33"/>
+						<Connection Source="Trans_S3_2.CNF" Destination="Trans_S4_2.REQ" Comment="" dx1="390.91"/>
+						<Connection Source="Trans_S3_1.CNF" Destination="Trans_C2_Down.REQ" Comment=""/>
+						<Connection Source="Trans_C2_Down.CNF" Destination="Trans_S4_1.REQ" Comment=""/>
+						<Connection Source="REQ" Destination="Trans_S3_1.REQ" Comment="" dx1="404.55"/>
+						<Connection Source="Trans_S4_2.CNF" Destination="Trans_C2_Up.REQ" Comment=""/>
+						<Connection Source="Trans_C2_Up.CNF" Destination="CNF" Comment="" dx1="209.09"/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="913.63"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
+				<Attribute Name="locked" Type="BOOL" Value="true"/>
 			</SubApp>
-			<FB Name="Trans_C8_3" Type="SkillFB" Comment="" x="11740.90909090909" y="686.3636363636364">
+			<FB Name="Trans_C8_3" Type="SkillFB" Comment="" x="11740.91" y="686.36">
 				<Parameter Name="msg" Value="'on'" Comment=""/>
 			</FB>
-			<FB Name="PnP_C4_2" Type="SkillFB" Comment="" x="10768.181818181818" y="-559.0909090909091">
+			<FB Name="PnP_C4_2" Type="SkillFB" Comment="" x="10768.18" y="-559.09">
 				<Parameter Name="msg" Value="'home'" Comment=""/>
 			</FB>
-			<FB Name="E_REND" Type="E_REND" Comment="" x="12004.545454545454" y="-1168.1818181818182">
+			<FB Name="E_REND" Type="E_REND" Comment="" x="12004.55" y="-1168.18">
 			</FB>
-			<SubApp Name="Init" Comment="" x="4004.5454545454545" y="-900.0">
+			<SubApp Name="Init" Comment="" x="4004.55" y="-900">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -239,7 +240,7 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<SubApp Name="Supply_Init" Comment="" x="1531.8181818181818" y="-8131.818181818182">
+					<SubApp Name="Supply_Init" Comment="" x="1531.82" y="-8131.82">
 						<SubAppInterfaceList>
 							<SubAppEventInputs>
 								<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -251,30 +252,30 @@
 							</SubAppEventOutputs>
 						</SubAppInterfaceList>
 						<SubAppNetwork>
-							<FB Name="Supply_C3_Home" Type="SkillFB" Comment="" x="-395.45454545454544" y="-2659.090909090909">
+							<FB Name="Supply_C3_Home" Type="SkillFB" Comment="" x="-395.45" y="-2659.09">
 								<Parameter Name="msg" Value="'home'" Comment=""/>
 							</FB>
-							<FB Name="Supply_C7_Off" Type="SkillFB" Comment="" x="3531.818181818182" y="-2731.818181818182">
+							<FB Name="Supply_C7_Off" Type="SkillFB" Comment="" x="3531.82" y="-2731.82">
 								<Parameter Name="msg" Value="'off'" Comment=""/>
 							</FB>
-							<FB Name="Supply_C7_On" Type="SkillFB" Comment="" x="1200.0" y="-2800.0">
+							<FB Name="Supply_C7_On" Type="SkillFB" Comment="" x="1200" y="-2800">
 								<Parameter Name="msg" Value="'on'" Comment=""/>
 							</FB>
-							<FB Name="Supply_S5_WaitForCap" Type="SkillFB" Comment="" x="2127.2727272727275" y="-1459.090909090909">
+							<FB Name="Supply_S5_WaitForCap" Type="SkillFB" Comment="" x="2127.27" y="-1459.09">
 								<Parameter Name="msg" Value="'true'" Comment=""/>
 							</FB>
 							<EventConnections>
-								<Connection Source="Supply_C3_Home.CNF" Destination="Supply_C7_On.REQ" Comment="" dx1="581.8181818181819"/>
-								<Connection Source="Supply_S5_WaitForCap.CNF" Destination="Supply_C7_Off.REQ" Comment="" dx1="181.8181818181818"/>
-								<Connection Source="Supply_C7_On.CNF" Destination="Supply_S5_WaitForCap.REQ" Comment="" dx1="318.1818181818182"/>
-								<Connection Source="REQ" Destination="Supply_C3_Home.REQ" Comment="" dx1="268.1818181818182"/>
-								<Connection Source="Supply_C7_Off.CNF" Destination="CNF" Comment="" dx1="131.8181818181818"/>
+								<Connection Source="Supply_C3_Home.CNF" Destination="Supply_C7_On.REQ" Comment="" dx1="581.82"/>
+								<Connection Source="Supply_S5_WaitForCap.CNF" Destination="Supply_C7_Off.REQ" Comment="" dx1="181.82"/>
+								<Connection Source="Supply_C7_On.CNF" Destination="Supply_S5_WaitForCap.REQ" Comment="" dx1="318.18"/>
+								<Connection Source="REQ" Destination="Supply_C3_Home.REQ" Comment="" dx1="268.18"/>
+								<Connection Source="Supply_C7_Off.CNF" Destination="CNF" Comment="" dx1="131.82"/>
 							</EventConnections>
 						</SubAppNetwork>
-						<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-						<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+						<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+						<Attribute Name="height" Type="LREAL" Value="659.09"/>
 					</SubApp>
-					<SubApp Name="PnP_Init" Comment="" x="731.8181818181819" y="-8131.818181818182">
+					<SubApp Name="PnP_Init" Comment="" x="731.82" y="-8131.82">
 						<SubAppInterfaceList>
 							<SubAppEventInputs>
 								<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -286,26 +287,26 @@
 							</SubAppEventOutputs>
 						</SubAppInterfaceList>
 						<SubAppNetwork>
-							<FB Name="PP_C5_VCyl_Home" Type="SkillFB" Comment="" x="2331.818181818182" y="131.8181818181818">
+							<FB Name="PP_C5_VCyl_Home" Type="SkillFB" Comment="" x="2331.82" y="131.82">
 								<Parameter Name="msg" Value="'home'" Comment=""/>
 							</FB>
-							<FB Name="PP_C4_HCyl_Home" Type="SkillFB" Comment="" x="927.2727272727273" y="127.27272727272727">
+							<FB Name="PP_C4_HCyl_Home" Type="SkillFB" Comment="" x="927.27" y="127.27">
 								<Parameter Name="msg" Value="'home'" Comment=""/>
 							</FB>
-							<FB Name="PP_C10_Init" Type="SkillFB" Comment="" x="-254.54545454545453" y="127.27272727272727">
+							<FB Name="PP_C10_Init" Type="SkillFB" Comment="" x="-254.55" y="127.27">
 								<Parameter Name="msg" Value="'open'" Comment=""/>
 							</FB>
 							<EventConnections>
-								<Connection Source="PP_C4_HCyl_Home.CNF" Destination="PP_C5_VCyl_Home.REQ" Comment="" dx1="154.54545454545453"/>
+								<Connection Source="PP_C4_HCyl_Home.CNF" Destination="PP_C5_VCyl_Home.REQ" Comment="" dx1="154.55"/>
 								<Connection Source="PP_C10_Init.CNF" Destination="PP_C4_HCyl_Home.REQ" Comment=""/>
-								<Connection Source="PP_C5_VCyl_Home.CNF" Destination="CNF" Comment="" dx1="213.63636363636363"/>
-								<Connection Source="REQ" Destination="PP_C10_Init.REQ" Comment="" dx1="268.1818181818182"/>
+								<Connection Source="PP_C5_VCyl_Home.CNF" Destination="CNF" Comment="" dx1="213.64"/>
+								<Connection Source="REQ" Destination="PP_C10_Init.REQ" Comment="" dx1="268.18"/>
 							</EventConnections>
 						</SubAppNetwork>
-						<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-						<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+						<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+						<Attribute Name="height" Type="LREAL" Value="659.09"/>
 					</SubApp>
-					<SubApp Name="Trans_Init" Comment="" x="1531.8181818181818" y="-7531.818181818182">
+					<SubApp Name="Trans_Init" Comment="" x="1531.82" y="-7531.82">
 						<SubAppInterfaceList>
 							<SubAppEventInputs>
 								<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -317,16 +318,16 @@
 							</SubAppEventOutputs>
 						</SubAppInterfaceList>
 						<SubAppNetwork>
-							<FB Name="Trans_C1_Inlet_Up" Type="SkillFB" Comment="" x="-395.45454545454544" y="-1200.0">
+							<FB Name="Trans_C1_Inlet_Up" Type="SkillFB" Comment="" x="-395.45" y="-1200">
 								<Parameter Name="msg" Value="'work'" Comment=""/>
 							</FB>
-							<FB Name="Trans_C8_On" Type="SkillFB" Comment="" x="2731.818181818182" y="-1231.8181818181818">
+							<FB Name="Trans_C8_On" Type="SkillFB" Comment="" x="2731.82" y="-1231.82">
 								<Parameter Name="msg" Value="'on'" Comment=""/>
 							</FB>
-							<FB Name="Trans_C6_release" Type="SkillFB" Comment="" x="927.2727272727273" y="-1200.0">
+							<FB Name="Trans_C6_release" Type="SkillFB" Comment="" x="927.27" y="-1200">
 								<Parameter Name="msg" Value="'release'" Comment=""/>
 							</FB>
-							<SubApp Name="OUTletletPassPalette_1" Comment="" x="5459.090909090909" y="-527.2727272727273">
+							<SubApp Name="OUTletletPassPalette_1" Comment="" x="5459.09" y="-527.27">
 								<SubAppInterfaceList>
 									<SubAppEventInputs>
 										<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -338,68 +339,68 @@
 									</SubAppEventOutputs>
 								</SubAppInterfaceList>
 								<SubAppNetwork>
-									<FB Name="Trans_S3_OutletSens1_2" Type="SkillFB" Comment="" x="4354.545454545455" y="-7613.636363636364">
+									<FB Name="Trans_S3_OutletSens1_2" Type="SkillFB" Comment="" x="4354.55" y="-7613.64">
 										<Parameter Name="msg" Value="'false'" Comment=""/>
 									</FB>
-									<FB Name="Trans_S4_OutletSens2_1" Type="SkillFB" Comment="" x="5472.727272727273" y="-7572.727272727273">
+									<FB Name="Trans_S4_OutletSens2_1" Type="SkillFB" Comment="" x="5472.73" y="-7572.73">
 										<Parameter Name="msg" Value="'false'" Comment=""/>
 									</FB>
-									<FB Name="Trans_S3_OutletSens1_1" Type="SkillFB" Comment="" x="672.7272727272727" y="-7604.545454545455">
+									<FB Name="Trans_S3_OutletSens1_1" Type="SkillFB" Comment="" x="672.73" y="-7604.55">
 										<Parameter Name="msg" Value="'true'" Comment=""/>
 									</FB>
-									<FB Name="Trans_S4_OutletSens2" Type="SkillFB" Comment="" x="3254.5454545454545" y="-7654.545454545455">
+									<FB Name="Trans_S4_OutletSens2" Type="SkillFB" Comment="" x="3254.55" y="-7654.55">
 										<Parameter Name="msg" Value="'true'" Comment=""/>
 									</FB>
-									<FB Name="Trans_C6_OutletStopper_Down" Type="SkillFB" Comment="" x="1972.7272727272727" y="-7631.818181818182">
+									<FB Name="Trans_C6_OutletStopper_Down" Type="SkillFB" Comment="" x="1972.73" y="-7631.82">
 										<Parameter Name="msg" Value="'home'" Comment=""/>
 									</FB>
-									<FB Name="Trans_C2_OutletStopper_Up" Type="SkillFB" Comment="" x="6631.818181818182" y="-7672.727272727273">
+									<FB Name="Trans_C2_OutletStopper_Up" Type="SkillFB" Comment="" x="6631.82" y="-7672.73">
 										<Parameter Name="msg" Value="'work'" Comment=""/>
 									</FB>
 									<EventConnections>
-										<Connection Source="Trans_S4_OutletSens2.CNF" Destination="Trans_S3_OutletSens1_2.REQ" Comment="" dx1="250.0"/>
-										<Connection Source="Trans_S3_OutletSens1_2.CNF" Destination="Trans_S4_OutletSens2_1.REQ" Comment="" dx1="231.8181818181818"/>
-										<Connection Source="Trans_S3_OutletSens1_1.CNF" Destination="Trans_C6_OutletStopper_Down.REQ" Comment="" dx1="231.8181818181818"/>
-										<Connection Source="Trans_C6_OutletStopper_Down.CNF" Destination="Trans_S4_OutletSens2.REQ" Comment="" dx1="213.63636363636363" dx2="213.63636363636363" dy="0.0"/>
-										<Connection Source="REQ" Destination="Trans_S3_OutletSens1_1.REQ" Comment="" dx1="572.7272727272727"/>
-										<Connection Source="Trans_S4_OutletSens2_1.CNF" Destination="Trans_C2_OutletStopper_Up.REQ" Comment="" dx1="72.72727272727273" dx2="72.72727272727273" dy="-31.818181818181817"/>
-										<Connection Source="Trans_C2_OutletStopper_Up.CNF" Destination="CNF" Comment="" dx1="600.0"/>
+										<Connection Source="Trans_S4_OutletSens2.CNF" Destination="Trans_S3_OutletSens1_2.REQ" Comment="" dx1="250"/>
+										<Connection Source="Trans_S3_OutletSens1_2.CNF" Destination="Trans_S4_OutletSens2_1.REQ" Comment="" dx1="231.82"/>
+										<Connection Source="Trans_S3_OutletSens1_1.CNF" Destination="Trans_C6_OutletStopper_Down.REQ" Comment="" dx1="231.82"/>
+										<Connection Source="Trans_C6_OutletStopper_Down.CNF" Destination="Trans_S4_OutletSens2.REQ" Comment="" dx1="213.64" dx2="213.64" dy="0"/>
+										<Connection Source="REQ" Destination="Trans_S3_OutletSens1_1.REQ" Comment="" dx1="572.73"/>
+										<Connection Source="Trans_S4_OutletSens2_1.CNF" Destination="Trans_C2_OutletStopper_Up.REQ" Comment="" dx1="72.73" dx2="72.73" dy="-31.82"/>
+										<Connection Source="Trans_C2_OutletStopper_Up.CNF" Destination="CNF" Comment="" dx1="600"/>
 									</EventConnections>
 								</SubAppNetwork>
-								<Attribute Name="Unfolded" Type="STRING" Value="true"/>
-								<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-								<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+								<Attribute Name="Unfolded" Value="true"/>
+								<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+								<Attribute Name="height" Type="LREAL" Value="659.09"/>
 							</SubApp>
-							<FB Name="Trans_C8_Off" Type="SkillFB" Comment="" x="12913.636363636364" y="-1200.0">
+							<FB Name="Trans_C8_Off" Type="SkillFB" Comment="" x="12913.64" y="-1200">
 								<Parameter Name="msg" Value="'off'" Comment=""/>
 							</FB>
 							<EventConnections>
 								<Connection Source="Trans_C1_Inlet_Up.CNF" Destination="Trans_C6_release.REQ" Comment=""/>
-								<Connection Source="Trans_C6_release.CNF" Destination="Trans_C8_On.REQ" Comment="" dx1="431.8181818181818"/>
-								<Connection Source="REQ" Destination="Trans_C1_Inlet_Up.REQ" Comment="" dx1="268.1818181818182"/>
-								<Connection Source="Trans_C8_On.CNF" Destination="OUTletletPassPalette_1.REQ" Comment="" dx1="395.45454545454544"/>
-								<Connection Source="Trans_C8_Off.CNF" Destination="CNF" Comment="" dx1="413.6363636363636" dx2="1100.0" dy="0.0"/>
-								<Connection Source="OUTletletPassPalette_1.CNF" Destination="Trans_C8_Off.REQ" Comment="" dx1="3000.0"/>
+								<Connection Source="Trans_C6_release.CNF" Destination="Trans_C8_On.REQ" Comment="" dx1="431.82"/>
+								<Connection Source="REQ" Destination="Trans_C1_Inlet_Up.REQ" Comment="" dx1="268.18"/>
+								<Connection Source="Trans_C8_On.CNF" Destination="OUTletletPassPalette_1.REQ" Comment="" dx1="395.45"/>
+								<Connection Source="Trans_C8_Off.CNF" Destination="CNF" Comment="" dx1="413.64" dx2="1100" dy="0"/>
+								<Connection Source="OUTletletPassPalette_1.CNF" Destination="Trans_C8_Off.REQ" Comment="" dx1="3000"/>
 							</EventConnections>
 						</SubAppNetwork>
-						<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-						<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+						<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+						<Attribute Name="height" Type="LREAL" Value="659.09"/>
 					</SubApp>
-					<FB Name="E_REND_3" Type="E_REND" Comment="" x="2431.818181818182" y="-8131.818181818182">
+					<FB Name="E_REND_3" Type="E_REND" Comment="" x="2431.82" y="-8131.82">
 					</FB>
 					<EventConnections>
 						<Connection Source="PnP_Init.CNF" Destination="Supply_Init.REQ" Comment=""/>
-						<Connection Source="Supply_Init.CNF" Destination="E_REND_3.EI1" Comment="" dx1="250.0"/>
-						<Connection Source="PnP_Init.CNF" Destination="Trans_Init.REQ" Comment="" dx1="154.54545454545453"/>
-						<Connection Source="Trans_Init.CNF" Destination="E_REND_3.EI2" Comment="" dx1="213.63636363636363"/>
-						<Connection Source="REQ" Destination="PnP_Init.REQ" Comment="" dx1="54.54545454545455" dx2="54.54545454545455" dy="-4100.0"/>
-						<Connection Source="E_REND_3.EO" Destination="CFNF" Comment="" dx1="995.4545454545455"/>
+						<Connection Source="Supply_Init.CNF" Destination="E_REND_3.EI1" Comment="" dx1="250"/>
+						<Connection Source="PnP_Init.CNF" Destination="Trans_Init.REQ" Comment="" dx1="154.55"/>
+						<Connection Source="Trans_Init.CNF" Destination="E_REND_3.EI2" Comment="" dx1="213.64"/>
+						<Connection Source="REQ" Destination="PnP_Init.REQ" Comment="" dx1="54.55" dx2="54.55" dy="-4100"/>
+						<Connection Source="E_REND_3.EO" Destination="CFNF" Comment="" dx1="995.45"/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
 			</SubApp>
-			<SubApp Name="PnP_ApplyCap" Comment="" x="9868.181818181818" y="-459.09090909090907">
+			<SubApp Name="PnP_ApplyCap" Comment="" x="9868.18" y="-459.09">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="Req" Type="Event" Comment="">
@@ -411,34 +412,34 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<FB Name="PnP_PressureSens_1" Type="SkillFB" Comment="" x="0.0" y="-12754.545454545454">
+					<FB Name="PnP_PressureSens_1" Type="SkillFB" Comment="" x="0" y="-12754.55">
 						<Parameter Name="msg" Value="'on'" Comment=""/>
 					</FB>
-					<FB Name="PnP_C10_1" Type="SkillFB" Comment="" x="2772.7272727272725" y="-11713.636363636364">
+					<FB Name="PnP_C10_1" Type="SkillFB" Comment="" x="2772.73" y="-11713.64">
 						<Parameter Name="msg" Value="'open'" Comment=""/>
 					</FB>
-					<FB Name="PnP_PressureSens_2" Type="SkillFB" Comment="" x="1331.8181818181818" y="-11713.636363636364">
+					<FB Name="PnP_PressureSens_2" Type="SkillFB" Comment="" x="1331.82" y="-11713.64">
 						<Parameter Name="msg" Value="'off'" Comment=""/>
 					</FB>
-					<FB Name="PnP_C5_2" Type="SkillFB" Comment="" x="3995.4545454545455" y="-11713.636363636364">
+					<FB Name="PnP_C5_2" Type="SkillFB" Comment="" x="3995.45" y="-11713.64">
 						<Parameter Name="msg" Value="'home'" Comment=""/>
 					</FB>
-					<FB Name="PnP_C5_1" Type="SkillFB" Comment="" x="54.54545454545455" y="-11713.636363636364">
+					<FB Name="PnP_C5_1" Type="SkillFB" Comment="" x="54.55" y="-11713.64">
 						<Parameter Name="msg" Value="'work'" Comment=""/>
 					</FB>
 					<EventConnections>
 						<Connection Source="PnP_PressureSens_2.CNF" Destination="PnP_C10_1.REQ" Comment=""/>
 						<Connection Source="PnP_C10_1.CNF" Destination="PnP_C5_2.REQ" Comment=""/>
 						<Connection Source="PnP_C5_1.CNF" Destination="PnP_PressureSens_2.REQ" Comment=""/>
-						<Connection Source="Req" Destination="PnP_PressureSens_1.REQ" Comment="" dx1="672.7272727272727"/>
-						<Connection Source="PnP_C5_2.CNF" Destination="CNF" Comment="" dx1="95.45454545454545"/>
-						<Connection Source="Req" Destination="PnP_C5_1.REQ" Comment="" dx1="600.0" dx2="600.0" dy="0.0"/>
+						<Connection Source="Req" Destination="PnP_PressureSens_1.REQ" Comment="" dx1="672.73"/>
+						<Connection Source="PnP_C5_2.CNF" Destination="CNF" Comment="" dx1="95.45"/>
+						<Connection Source="Req" Destination="PnP_C5_1.REQ" Comment="" dx1="600" dx2="600" dy="0"/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
 			</SubApp>
-			<SubApp Name="Supply_GetNewCap" Comment="" x="7868.181818181818" y="-1054.5454545454545">
+			<SubApp Name="Supply_GetNewCap" Comment="" x="7868.18" y="-1054.55">
 				<SubAppInterfaceList>
 					<SubAppEventInputs>
 						<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -450,60 +451,60 @@
 					</SubAppEventOutputs>
 				</SubAppInterfaceList>
 				<SubAppNetwork>
-					<FB Name="Supply_C7_2" Type="SkillFB" Comment="" x="2527.2727272727275" y="-10659.09090909091">
+					<FB Name="Supply_C7_2" Type="SkillFB" Comment="" x="2527.27" y="-10659.09">
 						<Parameter Name="msg" Value="'off'" Comment=""/>
 					</FB>
-					<FB Name="Supply_C7_1" Type="SkillFB" Comment="" x="-127.27272727272727" y="-10927.272727272728">
+					<FB Name="Supply_C7_1" Type="SkillFB" Comment="" x="-127.27" y="-10927.27">
 						<Parameter Name="msg" Value="'on'" Comment=""/>
 					</FB>
-					<FB Name="Supply_S5_1" Type="SkillFB" Comment="" x="1459.090909090909" y="-12400.0">
+					<FB Name="Supply_S5_1" Type="SkillFB" Comment="" x="1459.09" y="-12400">
 						<Parameter Name="msg" Value="'true'" Comment=""/>
 					</FB>
 					<EventConnections>
-						<Connection Source="Supply_S5_1.CNF" Destination="Supply_C7_2.REQ" Comment="" dx1="154.54545454545453"/>
-						<Connection Source="Supply_C7_1.CNF" Destination="Supply_S5_1.REQ" Comment="" dx1="231.8181818181818"/>
-						<Connection Source="Supply_C7_2.CNF" Destination="CNF" Comment="" dx1="563.6363636363636"/>
-						<Connection Source="REQ" Destination="Supply_C7_1.REQ" Comment="" dx1="727.2727272727273"/>
+						<Connection Source="Supply_S5_1.CNF" Destination="Supply_C7_2.REQ" Comment="" dx1="154.55"/>
+						<Connection Source="Supply_C7_1.CNF" Destination="Supply_S5_1.REQ" Comment="" dx1="231.82"/>
+						<Connection Source="Supply_C7_2.CNF" Destination="CNF" Comment="" dx1="563.64"/>
+						<Connection Source="REQ" Destination="Supply_C7_1.REQ" Comment="" dx1="727.27"/>
 					</EventConnections>
 				</SubAppNetwork>
-				<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-				<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+				<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+				<Attribute Name="height" Type="LREAL" Value="659.09"/>
 			</SubApp>
 			<EventConnections>
-				<Connection Source="PnPHW.INITO" Destination="SupplyHW.INIT" Comment="" dx1="72.72727272727273" dx2="72.72727272727273" dy="313.6363636363636"/>
+				<Connection Source="PnPHW.INITO" Destination="SupplyHW.INIT" Comment="" dx1="72.73" dx2="72.73" dy="313.64"/>
 				<Connection Source="Supply_C3_1.CNF" Destination="PnP_C10_1.REQ" Comment=""/>
 				<Connection Source="PnP_C10_1.CNF" Destination="Supply_C3_2.REQ" Comment=""/>
-				<Connection Source="Supply_C3_2.CNF" Destination="PnP_C4_1.REQ" Comment="" dx1="72.72727272727273" dx2="72.72727272727273" dy="227.27272727272728"/>
-				<Connection Source="INletletPassPalette.CNF" Destination="Trans_S3_1.REQ" Comment="" dx1="72.72727272727273" dx2="72.72727272727273" dy="268.1818181818182"/>
+				<Connection Source="Supply_C3_2.CNF" Destination="PnP_C4_1.REQ" Comment="" dx1="72.73" dx2="72.73" dy="227.27"/>
+				<Connection Source="INletletPassPalette.CNF" Destination="Trans_S3_1.REQ" Comment="" dx1="72.73" dx2="72.73" dy="268.18"/>
 				<Connection Source="Trans_S3_1.CNF" Destination="Trans_C8_2.REQ" Comment=""/>
 				<Connection Source="Trans_C8_2.CNF" Destination="Trans_C6_1.REQ" Comment=""/>
-				<Connection Source="PnP_C4_1.CNF" Destination="E_REND_4.EI1" Comment="" dx1="395.45454545454544"/>
-				<Connection Source="Trans_C6_1.CNF" Destination="E_REND_4.EI2" Comment="" dx1="72.72727272727273" dx2="72.72727272727273" dy="-640.9090909090909"/>
-				<Connection Source="Trans_C6_2.CNF" Destination="Trans_C8_3.REQ" Comment="" dx1="195.45454545454547"/>
-				<Connection Source="Trans_C8_3.CNF" Destination="OUTletletPassPalette_2.REQ" Comment="" dx1="113.63636363636364"/>
-				<Connection Source="OUTletletPassPalette_2.CNF" Destination="INletletPassPalette.REQ" Comment="" dx1="250.0" dx2="72.72727272727273" dy="1231.8181818181818"/>
-				<Connection Source="PnP_C4_2.CNF" Destination="E_REND.EI2" Comment="" dx1="95.45454545454545"/>
+				<Connection Source="PnP_C4_1.CNF" Destination="E_REND_4.EI1" Comment="" dx1="395.45"/>
+				<Connection Source="Trans_C6_1.CNF" Destination="E_REND_4.EI2" Comment="" dx1="72.73" dx2="72.73" dy="-640.91"/>
+				<Connection Source="Trans_C6_2.CNF" Destination="Trans_C8_3.REQ" Comment="" dx1="195.45"/>
+				<Connection Source="Trans_C8_3.CNF" Destination="OUTletletPassPalette_2.REQ" Comment="" dx1="113.64"/>
+				<Connection Source="OUTletletPassPalette_2.CNF" Destination="INletletPassPalette.REQ" Comment="" dx1="250" dx2="72.73" dy="1231.82"/>
+				<Connection Source="PnP_C4_2.CNF" Destination="E_REND.EI2" Comment="" dx1="95.45"/>
 				<Connection Source="Start_1.EO" Destination="Init.REQ" Comment=""/>
-				<Connection Source="Init.CFNF" Destination="Supply_C3_1.REQ" Comment="" dx1="154.54545454545453"/>
-				<Connection Source="Init.CFNF" Destination="Trans_C8_1.REQ" Comment="" dx1="150.0"/>
-				<Connection Source="E_REND.EO" Destination="Supply_C3_1.REQ" Comment="" dx1="268.1818181818182" dx2="54.54545454545455" dy="-372.72727272727275"/>
-				<Connection Source="Trans_C8_1.CNF" Destination="INletletPassPalette.REQ" Comment="" dx1="159.0909090909091"/>
-				<Connection Source="PnP_ApplyCap.CNF" Destination="Trans_C6_2.REQ" Comment="" dx1="72.72727272727273" dx2="72.72727272727273" dy="618.1818181818181"/>
-				<Connection Source="PnP_ApplyCap.CNF" Destination="PnP_C4_2.REQ" Comment="" dx1="131.8181818181818"/>
-				<Connection Source="Supply_GetNewCap.CNF" Destination="E_REND.EI1" Comment="" dx1="2613.6363636363635"/>
-				<Connection Source="Supply_C3_2.CNF" Destination="Supply_GetNewCap.REQ" Comment="" dx1="172.72727272727272"/>
+				<Connection Source="Init.CFNF" Destination="Supply_C3_1.REQ" Comment="" dx1="154.55"/>
+				<Connection Source="Init.CFNF" Destination="Trans_C8_1.REQ" Comment="" dx1="150"/>
+				<Connection Source="E_REND.EO" Destination="Supply_C3_1.REQ" Comment="" dx1="268.18" dx2="54.55" dy="-372.73"/>
+				<Connection Source="Trans_C8_1.CNF" Destination="INletletPassPalette.REQ" Comment="" dx1="159.09"/>
+				<Connection Source="PnP_ApplyCap.CNF" Destination="Trans_C6_2.REQ" Comment="" dx1="72.73" dx2="72.73" dy="618.18"/>
+				<Connection Source="PnP_ApplyCap.CNF" Destination="PnP_C4_2.REQ" Comment="" dx1="131.82"/>
+				<Connection Source="Supply_GetNewCap.CNF" Destination="E_REND.EI1" Comment="" dx1="2613.64"/>
+				<Connection Source="Supply_C3_2.CNF" Destination="Supply_GetNewCap.REQ" Comment="" dx1="172.73"/>
 				<Connection Source="E_REND_4.EO" Destination="PnP_ApplyCap.Req" Comment=""/>
-				<Connection Source="SupplyHW.INITO" Destination="TransHW.INIT" Comment="" dx1="72.72727272727273" dx2="72.72727272727273" dy="331.8181818181818"/>
+				<Connection Source="SupplyHW.INITO" Destination="TransHW.INIT" Comment="" dx1="72.73" dx2="72.73" dy="331.82"/>
 			</EventConnections>
 		</SubAppNetwork>
 	</Application>
-	<Device Name="PnP_Unit" Type="FORTE_PC" Comment="" x="3195.4545454545455" y="1313.6363636363637">
+	<Device Name="PnP_Unit" Type="FORTE_PC" Comment="" x="3195.45" y="1313.64">
 		<Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;" Comment="Device manager socket ID"/>
 		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
 		<Attribute Name="Color" Type="STRING" Value="231,132,126"/>
-		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0" y="0">
 			<FBNetwork>
-				<SubApp Name="Application.PnPHW" Comment="" x="6695.454545454545" y="-1400.0">
+				<SubApp Name="Application.PnPHW" Comment="" x="6695.45" y="-1400">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -514,16 +515,16 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<FB Name="Application.PnP_C10_1" Type="SkillFB" Comment="" x="5200.0" y="-5354.545454545455">
+				<FB Name="Application.PnP_C10_1" Type="SkillFB" Comment="" x="5200" y="-5354.55">
 					<Parameter Name="msg" Value="'close'" Comment=""/>
 				</FB>
-				<FB Name="Application.PnP_C4_1" Type="SkillFB" Comment="" x="7195.454545454545" y="-4800.0">
+				<FB Name="Application.PnP_C4_1" Type="SkillFB" Comment="" x="7195.45" y="-4800">
 					<Parameter Name="msg" Value="'work'" Comment=""/>
 				</FB>
-				<SubApp Name="Application.PnP_ApplyCap" Comment="" x="9100.0" y="-4700.0">
+				<SubApp Name="Application.PnP_ApplyCap" Comment="" x="9100" y="-4700">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="Req" Type="Event" Comment="">
@@ -534,13 +535,13 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<FB Name="Application.PnP_C4_2" Type="SkillFB" Comment="" x="10000.0" y="-4800.0">
+				<FB Name="Application.PnP_C4_2" Type="SkillFB" Comment="" x="10000" y="-4800">
 					<Parameter Name="msg" Value="'home'" Comment=""/>
 				</FB>
-				<SubApp Name="PP" Comment="" x="1613.6363636363637" y="195.45454545454547">
+				<SubApp Name="PP" Comment="" x="1613.64" y="195.45">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="Init" Type="Event" Comment="">
@@ -563,10 +564,10 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<SubApp Name="PickAndPlace" Comment="" x="3754.5454545454545" y="313.6363636363636">
+				<SubApp Name="PickAndPlace" Comment="" x="3754.55" y="313.64">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -580,8 +581,8 @@
 							<AdapterDeclaration Name="cmd" Type="APickNPlace" Comment=""/>
 						</Sockets>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
 				<EventConnections>
 					<Connection Source="Application.PnP_ApplyCap.CNF" Destination="Application.PnP_C4_2.REQ" Comment=""/>
@@ -589,19 +590,19 @@
 			</FBNetwork>
 		</Resource>
 	</Device>
-	<Device Name="Supply_Unit" Type="FORTE_PC" Comment="" x="4113.636363636364" y="1313.6363636363637">
+	<Device Name="Supply_Unit" Type="FORTE_PC" Comment="" x="4113.64" y="1313.64">
 		<Parameter Name="MGR_ID" Value="&quot;localhost:61501&quot;" Comment="Device manager socket ID"/>
 		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
 		<Attribute Name="Color" Type="STRING" Value="143,171,209"/>
-		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0" y="0">
 			<FBNetwork>
-				<FB Name="Application.Supply_C3_1" Type="SkillFB" Comment="" x="4427.272727272727" y="-5354.545454545455">
+				<FB Name="Application.Supply_C3_1" Type="SkillFB" Comment="" x="4427.27" y="-5354.55">
 					<Parameter Name="msg" Value="'work'" Comment=""/>
 				</FB>
-				<FB Name="Application.Supply_C3_2" Type="SkillFB" Comment="" x="6100.0" y="-5354.545454545455">
+				<FB Name="Application.Supply_C3_2" Type="SkillFB" Comment="" x="6100" y="-5354.55">
 					<Parameter Name="msg" Value="'home'" Comment=""/>
 				</FB>
-				<SubApp Name="Supply" Comment="" x="2931.818181818182" y="195.45454545454547">
+				<SubApp Name="Supply" Comment="" x="2931.82" y="195.45">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="Init" Type="Event" Comment="">
@@ -620,10 +621,10 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<SubApp Name="Supply" Comment="" x="4854.545454545455" y="572.7272727272727">
+				<SubApp Name="Supply" Comment="" x="4854.55" y="572.73">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -638,10 +639,10 @@
 							<AdapterDeclaration Name="depletionAlarm" Type="Alarm" Comment=""/>
 						</Sockets>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<SubApp Name="Application.Supply_GetNewCap" Comment="" x="7195.454545454545" y="-5300.0">
+				<SubApp Name="Application.Supply_GetNewCap" Comment="" x="7195.45" y="-5300">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -652,10 +653,10 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<SubApp Name="Application.SupplyHW" Comment="" x="7695.454545454545" y="-1400.0">
+				<SubApp Name="Application.SupplyHW" Comment="" x="7695.45" y="-1400">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -666,8 +667,8 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
 				<EventConnections>
 					<Connection Source="Application.Supply_C3_2.CNF" Destination="Application.Supply_GetNewCap.REQ" Comment=""/>
@@ -675,13 +676,13 @@
 			</FBNetwork>
 		</Resource>
 	</Device>
-	<Device Name="Transport_Unit" Type="FORTE_PC" Comment="" x="5054.545454545455" y="1313.6363636363637">
+	<Device Name="Transport_Unit" Type="FORTE_PC" Comment="" x="5054.55" y="1313.64">
 		<Parameter Name="MGR_ID" Value="&quot;localhost:61500&quot;" Comment="Device manager socket ID"/>
 		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
 		<Attribute Name="Color" Type="STRING" Value="254,236,188"/>
-		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0" y="0">
 			<FBNetwork>
-				<SubApp Name="Application.TransHW" Comment="" x="8754.545454545454" y="-1400.0">
+				<SubApp Name="Application.TransHW" Comment="" x="8754.55" y="-1400">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -692,10 +693,10 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<SubApp Name="Application.OUTletletPassPalette_2" Comment="" x="11500.0" y="-3595.4545454545455">
+				<SubApp Name="Application.OUTletletPassPalette_2" Comment="" x="11500" y="-3595.45">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -706,28 +707,28 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<FB Name="Application.Trans_C8_3" Type="SkillFB" Comment="" x="10772.727272727272" y="-3554.5454545454545">
+				<FB Name="Application.Trans_C8_3" Type="SkillFB" Comment="" x="10772.73" y="-3554.55">
 					<Parameter Name="msg" Value="'on'" Comment=""/>
 				</FB>
-				<FB Name="Application.Trans_C6_2" Type="SkillFB" Comment="" x="9900.0" y="-3595.4545454545455">
+				<FB Name="Application.Trans_C6_2" Type="SkillFB" Comment="" x="9900" y="-3595.45">
 					<Parameter Name="msg" Value="'release'" Comment=""/>
 				</FB>
-				<FB Name="Application.Trans_C6_1" Type="SkillFB" Comment="" x="7595.454545454545" y="-3395.4545454545455">
+				<FB Name="Application.Trans_C6_1" Type="SkillFB" Comment="" x="7595.45" y="-3395.45">
 					<Parameter Name="msg" Value="'fix'" Comment=""/>
 				</FB>
-				<FB Name="Application.Trans_C8_2" Type="SkillFB" Comment="" x="6795.454545454545" y="-3395.4545454545455">
+				<FB Name="Application.Trans_C8_2" Type="SkillFB" Comment="" x="6795.45" y="-3395.45">
 					<Parameter Name="msg" Value="'off'" Comment=""/>
 				</FB>
-				<FB Name="Application.Trans_S3_1" Type="SkillFB" Comment="" x="5900.0" y="-3395.4545454545455">
+				<FB Name="Application.Trans_S3_1" Type="SkillFB" Comment="" x="5900" y="-3395.45">
 					<Parameter Name="msg" Value="'true'" Comment=""/>
 				</FB>
-				<FB Name="Application.Trans_C8_1" Type="SkillFB" Comment="" x="4300.0" y="-3395.4545454545455">
+				<FB Name="Application.Trans_C8_1" Type="SkillFB" Comment="" x="4300" y="-3395.45">
 					<Parameter Name="msg" Value="'on'" Comment=""/>
 				</FB>
-				<SubApp Name="Application.INletletPassPalette" Comment="" x="5100.0" y="-3295.4545454545455">
+				<SubApp Name="Application.INletletPassPalette" Comment="" x="5100" y="-3295.45">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="REQ" Type="Event" Comment="">
@@ -738,10 +739,10 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<SubApp Name="Transport" Comment="" x="2931.818181818182" y="1100.0">
+				<SubApp Name="Transport" Comment="" x="2931.82" y="1100">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="Init" Type="Event" Comment="">
@@ -760,10 +761,10 @@
 							</SubAppEvent>
 						</SubAppEventOutputs>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
-				<SubApp Name="ConveyorBelt" Comment="" x="6200.0" y="954.5454545454545">
+				<SubApp Name="ConveyorBelt" Comment="" x="6200" y="954.55">
 					<SubAppInterfaceList>
 						<SubAppEventInputs>
 							<SubAppEvent Name="INIT" Type="Event" Comment="">
@@ -777,8 +778,8 @@
 							<AdapterDeclaration Name="cmd" Type="AConveyor" Comment=""/>
 						</Sockets>
 					</SubAppInterfaceList>
-					<Attribute Name="width" Type="LREAL" Value="1327.2727272727273"/>
-					<Attribute Name="height" Type="LREAL" Value="659.0909090909091"/>
+					<Attribute Name="width" Type="LREAL" Value="1327.27"/>
+					<Attribute Name="height" Type="LREAL" Value="659.09"/>
 				</SubApp>
 				<EventConnections>
 					<Connection Source="Application.Trans_C8_3.CNF" Destination="Application.OUTletletPassPalette_2.REQ" Comment=""/>
@@ -793,7 +794,7 @@
 			</FBNetwork>
 		</Resource>
 	</Device>
-	<Segment Name="Ethernet" Type="Ethernet" Comment="" x="3195.4545454545455" y="1995.4545454545455" dx1="2654.5454545454545">
+	<Segment Name="Ethernet" Type="Ethernet" Comment="" x="3195.45" y="1995.45" dx1="2654.55">
 		<Attribute Name="Color" Type="STRING" Value="192,192,192"/>
 	</Segment>
 	<Mapping From="Application.Supply_C3_1" To="Supply_Unit.EMB_RES"/>
